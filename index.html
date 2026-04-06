@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LogicMesh Solutions — Embedded &amp; Cloud Engineering</title>
+  <link rel="icon" href="images/LogicMesh_Logo_Linkedin_Profile.png">
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      /* LEFT ALIGN */
+      padding: 100px 5%;
+      overflow: hidden;
+      background: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      inset: 0;
+      /* background:
+        radial-gradient(ellipse 70% 55% at 50% 20%, rgba(30, 92, 74, 0.06) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 85% 75%, rgba(139, 77, 31, 0.05) 0%, transparent 50%); */
+        background: rgba(0, 0, 0, 0.45);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--accent-muted);
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      margin-bottom: 1.75rem;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 4px;
+      animation: fadeInDown 0.75s ease forwards;
+    }
+
+    .hero-title {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.1rem, 5.5vw, 3.35rem);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.03em;
+      color: var(--heading);
+      animation: fadeInUp 0.85s ease 0.1s both;
+    }
+
+    .hero-title .line1 {
+      display: block;
+      color: #ffffff;
+    }
+
+    .hero-title .line2 {
+      display: block;
+      color: #ffffff;
+      margin-top: 0.15em;
+    }
+
+    .hero-sub {
+      font-size: 1.125rem;
+      color: var(--surface);
+      max-width: 520px;
+      margin: 0 0 1.5rem;
+      line-height: 1.65;
+      animation: fadeInUp 0.85s ease 0.2s both;
+    }
+
+    .hero-tagline {
+      font-size: 0.9rem;
+      color: var(--surface);
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.85s ease 0.28s both;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.85s ease 0.35s both;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 3.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+      animation: fadeInUp 0.85s ease 0.42s both;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-top: 0.35rem;
+      max-width: 140px;
+    }
+
+    .intro-strip {
+      position: relative;
+      z-index: 1;
+      padding: 72px 5%;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .intro-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--accent-muted);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .intro-heading {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.45rem, 3vw, 1.85rem);
+      color: var(--heading);
+      line-height: 1.3;
+      margin-bottom: 1.25rem;
+    }
+
+    .intro-heading span {
+      color: var(--accent);
+    }
+
+    .intro-body {
+      font-size: 0.98rem;
+      color: var(--text-dim);
+      line-height: 1.8;
+    }
+
+    .intro-services {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .intro-service-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      transition: border-color 0.25s, box-shadow 0.25s;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .intro-service-row:hover {
+      border-color: var(--border-bright);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .intro-service-row .icon {
+      font-size: 1.35rem;
+      flex-shrink: 0;
+    }
+
+    .intro-service-row .svc-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--heading);
+    }
+
+    .intro-service-row .svc-sub {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+    }
+
+    .intro-service-row .arrow {
+      margin-left: auto;
+      color: var(--accent);
+      font-size: 1rem;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .intro-service-row:hover .arrow {
+      opacity: 1;
+    }
+
+    .cta-band {
+      position: relative;
+      z-index: 1;
+      padding: 72px 5%;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--bg2) 0%, var(--bg) 100%);
+    }
+
+    .cta-band h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 3.2vw, 2.15rem);
+      color: var(--heading);
+      margin-bottom: 0.85rem;
+    }
+
+    .cta-band p {
+      color: var(--text-dim);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .background-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    @media (max-width: 768px) {
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .hero-stats {
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid-bg"></div>
+
+  <nav>
+    <a class="nav-logo" href="index.html">Logic<span>Mesh</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="why.html">Why Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <video autoplay muted loop playsinline id="myVideo" class="background-video">
+      <source src="videos/microcontroller_background_video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="line1">From Concept to </span>
+        <span class="line2">Connected Systems</span>
+      </h1>
+      <p class="hero-sub">We design and ship firmware, cloud integrations, and web and mobile apps for industrial and
+        IoT products — from prototypes to production.</p>
+      <p class="hero-tagline">Embedded systems · Field connectivity · Dashboards &amp; apps</p>
+      <div class="hero-ctas">
+        <a href="services.html" class="btn-primary">View services</a>
+        <a href="contact.html" class="btn-secondary">Get in touch</a>
+      </div>
+      <!--
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">6</span><span class="stat-label">Core service areas</span></div>
+          <div class="stat"><span class="stat-num">3</span><span class="stat-label">Senior engineers</span></div>
+          <div class="stat"><span class="stat-num">Remote</span><span class="stat-label">Projects worldwide</span></div>
+          <div class="stat"><span class="stat-num">&lt; 4h</span><span class="stat-label">Typical first reply</span></div>
+        </div>
+      </div>
+      -->
+  </section>
+
+  <div class="intro-strip">
+    <div class="intro-grid">
+      <div class="reveal">
+        <span class="intro-label">About us</span>
+        <h2 class="intro-heading">One team for <span>firmware, cloud, and product software</span></h2>
+        <p class="intro-body">
+          LogicMesh is an engineering practice focused on connected devices and the systems around them: embedded
+          firmware, industrial protocols, cloud backends, and the web and mobile apps your customers use.<br /><br />
+          We work with you from architecture through delivery — so sensors, gateways, APIs, and UIs stay aligned instead
+          of drifting apart across vendors.
+        </p>
+        <br />
+        <a href="why.html" class="btn-primary" style="margin-top:0.5rem">Why work with us</a>
+      </div>
+      <div class="intro-services reveal">
+        <a href="services.html#iot" class="intro-service-row">
+          <span class="icon">⚡</span>
+          <div>
+            <div class="svc-name">IoT firmware</div>
+            <div class="svc-sub">ESP32, STM32, FreeRTOS</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a href="services.html#industrial" class="intro-service-row">
+          <span class="icon">🏭</span>
+          <div>
+            <div class="svc-name">Industrial automation</div>
+            <div class="svc-sub">Modbus, RS-485, control</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a href="services.html#cloud" class="intro-service-row">
+          <span class="icon">☁️</span>
+          <div>
+            <div class="svc-name">Cloud integration</div>
+            <div class="svc-sub">AWS IoT, Azure, MQTT</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a href="services.html#web" class="intro-service-row">
+          <span class="icon">🌐</span>
+          <div>
+            <div class="svc-name">Web &amp; mobile</div>
+            <div class="svc-sub">.NET, React, Flutter</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a href="services.html#pcb" class="intro-service-row">
+          <span class="icon">🔌</span>
+          <div>
+            <div class="svc-name">PCB design</div>
+            <div class="svc-sub">KiCad, layout &amp; bring-up</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <h2 class="reveal">Have a product or integration in mind?</h2>
+    <p class="reveal">Tell us what you’re building. We usually respond within a few hours and can schedule a short
+      discovery call to align on scope and timeline.</p>
+    <div class="cta-buttons reveal">
+      <a href="contact.html" class="btn-primary">Start a conversation</a>
+      <a href="portfolio.html" class="btn-secondary" style="color: var(--accent);">See our work</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Logic<span>Mesh</span> Solutions</div>
+        <div class="footer-tagline">Embedded &amp; cloud engineering from Karachi</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="team.html">Team</a>
+        <a href="why.html">Why Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 <span>LogicMesh Solutions</span> · Karachi, Pakistan · All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+<!--
+  <p class="hero-tagline">Embedded systems · Field connectivity · Dashboards &amp; apps</p>
+  <div class="hero-ctas">
+    <a href="services.html" class="btn-primary">View services</a>
+    <a href="contact.html" class="btn-secondary">Get in touch</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num">6</span><span class="stat-label">Core service areas</span></div>
+    <div class="stat"><span class="stat-num">3</span><span class="stat-label">Senior engineers</span></div>
+    <div class="stat"><span class="stat-num">Remote</span><span class="stat-label">Projects worldwide</span></div>
+    <div class="stat"><span class="stat-num">&lt; 4h</span><span class="stat-label">Typical first reply</span></div>
+</div>
+</div>
+</section>
+
+<div class="intro-strip">
+  <div class="intro-grid">
+    <div class="reveal">
+      <span class="intro-label">About us</span>
+      <h2 class="intro-heading">One team for <span>firmware, cloud, and product software</span></h2>
+      <p class="intro-body">
+        LogicMesh is an engineering practice focused on connected devices and the systems around them: embedded
+        firmware, industrial protocols, cloud backends, and the web and mobile apps your customers use.<br /><br />
+        We work with you from architecture through delivery — so sensors, gateways, APIs, and UIs stay aligned instead
+        of drifting apart across vendors.
+      </p>
+      <br />
+      <a href="why.html" class="btn-primary" style="margin-top:0.5rem">Why work with us</a>
+    </div>
+    <div class="intro-services reveal">
+      <a href="services.html#iot" class="intro-service-row">
+        <span class="icon">⚡</span>
+        <div>
+          <div class="svc-name">IoT firmware</div>
+          <div class="svc-sub">ESP32, STM32, FreeRTOS</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+      <a href="services.html#industrial" class="intro-service-row">
+        <span class="icon">🏭</span>
+        <div>
+          <div class="svc-name">Industrial automation</div>
+          <div class="svc-sub">Modbus, RS-485, control</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+      <a href="services.html#cloud" class="intro-service-row">
+        <span class="icon">☁️</span>
+        <div>
+          <div class="svc-name">Cloud integration</div>
+          <div class="svc-sub">AWS IoT, Azure, MQTT</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+      <a href="services.html#web" class="intro-service-row">
+        <span class="icon">🌐</span>
+        <div>
+          <div class="svc-name">Web &amp; mobile</div>
+          <div class="svc-sub">.NET, React, Flutter</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+      <a href="services.html#pcb" class="intro-service-row">
+        <span class="icon">🔌</span>
+        <div>
+          <div class="svc-name">PCB design</div>
+          <div class="svc-sub">KiCad, layout &amp; bring-up</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <h2 class="reveal">Have a product or integration in mind?</h2>
+  <p class="reveal">Tell us what you’re building. We usually respond within a few hours and can schedule a short
+    discovery call to align on scope and timeline.</p>
+  <div class="cta-buttons reveal">
+    <a href="contact.html" class="btn-primary">Start a conversation</a>
+    <a href="portfolio.html" class="btn-secondary">See our work</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Logic<span>Mesh</span> Solutions</div>
+      <div class="footer-tagline">Embedded &amp; cloud engineering from Karachi</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="team.html">Team</a>
+      <a href="why.html">Why Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 <span>LogicMesh Solutions</span> · Karachi, Pakistan · All rights reserved.</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+
+</html>
+-->

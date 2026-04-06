@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Services — LogicMesh Solutions</title>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.service-section { margin-bottom:5rem; }
+.service-section:last-child { margin-bottom:0; }
+.service-header {
+  display:flex;align-items:flex-start;gap:2rem;
+  padding:2.5rem;
+  border:1px solid var(--border);
+  background:var(--card);
+  margin-bottom:1.5rem;
+  position:relative;overflow:hidden;
+  border-radius:6px;
+  box-shadow:var(--shadow-sm);
+}
+.service-header::after {
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at top left,rgba(30,92,74,0.06) 0%,transparent 55%);
+  pointer-events:none;
+}
+.svc-icon-big { font-size:2.75rem;flex-shrink:0; }
+.svc-title { font-family:'DM Sans',sans-serif;font-weight:700;font-size:1.25rem;color:var(--heading);margin-bottom:0.5rem; }
+.svc-desc { font-size:0.95rem;color:var(--text-dim);line-height:1.85;max-width:700px; }
+.svc-anchor { position:absolute;top:-90px; }
+
+.feature-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem; }
+.feature-item {
+  padding:1.5rem;border:1px solid var(--border);background:var(--bg);
+  transition:border-color 0.25s, box-shadow 0.25s;
+  border-radius:4px;
+}
+.feature-item:hover { border-color:var(--border-bright);box-shadow:var(--shadow-sm); }
+.feature-bullet {
+  font-family:'DM Sans',sans-serif;font-size:0.65rem;font-weight:600;
+  letter-spacing:0.06em;color:var(--accent-muted);margin-bottom:0.5rem;display:block;
+}
+.feature-title { font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:600;color:var(--heading);margin-bottom:0.4rem; }
+.feature-body { font-size:0.83rem;color:var(--text-dim);line-height:1.7; }
+
+.divider {
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--border),transparent);
+  margin:4rem 0;
+}
+
+.pricing-note {
+  display:inline-flex;align-items:center;gap:0.7rem;
+  padding:0.85rem 1.25rem;
+  border:1px solid var(--border);
+  background:var(--bg);
+  margin-top:1.5rem;
+  border-radius:4px;
+}
+.pricing-note span { font-size:0.78rem;color:var(--text-dim); }
+.pricing-note strong { font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:700;color:var(--heading); }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<nav style="background-color: var(--heading);">
+  <a class="nav-logo" href="index.html">Logic<span>Mesh</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="why.html">Why Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-banner">
+  <div class="page-banner-inner">
+    <!-- <span class="banner-eyebrow"> 01 — CAPABILITIES</span> -->
+    <h1 class="banner-title">Our <span>services</span></h1>
+    <p class="banner-sub">Firmware, connectivity, cloud, applications, and board design — scoped and delivered as one engineering effort.</p>
+    <div class="banner-line"></div>
+  </div>
+</div>
+
+<main>
+
+  <!-- IoT Firmware -->
+  <div id="iot" class="service-section reveal">
+    <div class="svc-anchor"></div>
+    <div class="service-header">
+      <span class="svc-icon-big">⚡</span>
+      <div>
+        <span class="eyebrow">Core Service</span>
+        <h2 class="svc-title">IoT Firmware Development</h2>
+        <p class="svc-desc">End-to-end IoT firmware on ESP32, STM32, and ATSAM microcontrollers. We write firmware that runs in production — not just demos. MQTT over TLS, secure boot, OTA firmware updates, and low-power wireless design for battery-operated devices.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">ESP32</span><span class="tech-tag">ESP32-S3</span><span class="tech-tag">STM32F1/F4</span>
+          <span class="tech-tag">ATSAM</span><span class="tech-tag">FreeRTOS</span><span class="tech-tag">MQTT</span>
+          <span class="tech-tag">OTA</span><span class="tech-tag">Secure Boot</span><span class="tech-tag">ESP-IDF</span>
+        </div>
+        <div class="pricing-note"><span>Starting from</span><strong>$100</strong><span>— Fixed Price</span></div>
+      </div>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-item"><span class="feature-bullet">01</span><h3 class="feature-title">MQTT over TLS</h3><p class="feature-body">Secure broker communication with certificate-based authentication for all cloud-connected devices.</p></div>
+      <div class="feature-item"><span class="feature-bullet">02</span><h3 class="feature-title">OTA Firmware Updates</h3><p class="feature-body">Remote firmware upgrades without physical access — rollback support and update verification built in.</p></div>
+      <div class="feature-item"><span class="feature-bullet">03</span><h3 class="feature-title">Low-Power Design</h3><p class="feature-body">Deep sleep scheduling, wake-on-interrupt logic, and power profiling for battery-operated IoT nodes.</p></div>
+      <div class="feature-item"><span class="feature-bullet">04</span><h3 class="feature-title">FreeRTOS Multitasking</h3><p class="feature-body">Task scheduling, queues, semaphores, and interrupt service routines for reliable concurrent operation.</p></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Industrial -->
+  <div id="industrial" class="service-section reveal">
+    <div class="svc-anchor"></div>
+    <div class="service-header">
+      <span class="svc-icon-big">🏭</span>
+      <div>
+        <span class="eyebrow">Industrial</span>
+        <h2 class="svc-title">Industrial Automation &amp; Modbus</h2>
+        <p class="svc-desc">Modbus RTU and Modbus TCP firmware for industrial sensors, VFDs, PLCs, and energy meters over RS-485. FreeRTOS multitasking with concurrent Modbus polling, PID control loops, and cloud data publishing. Built for 24/7 uptime.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">Modbus RTU</span><span class="tech-tag">Modbus TCP</span><span class="tech-tag">RS-485</span>
+          <span class="tech-tag">PID Control</span><span class="tech-tag">FreeRTOS</span><span class="tech-tag">VFD</span><span class="tech-tag">PLC</span>
+        </div>
+        <div class="pricing-note"><span>Starting from</span><strong>$100</strong><span>— Fixed Price</span></div>
+      </div>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-item"><span class="feature-bullet">01</span><h3 class="feature-title">Modbus RTU / TCP</h3><p class="feature-body">Multi-slave RS-485 networks with master polling, exception handling, and data aggregation.</p></div>
+      <div class="feature-item"><span class="feature-bullet">02</span><h3 class="feature-title">PID Control Loops</h3><p class="feature-body">Precision closed-loop control for HVAC, motor drives, and process automation systems.</p></div>
+      <div class="feature-item"><span class="feature-bullet">03</span><h3 class="feature-title">Alarm Management</h3><p class="feature-body">Real-time threshold monitoring with push alerts, logging, and escalation workflows.</p></div>
+      <div class="feature-item"><span class="feature-bullet">04</span><h3 class="feature-title">Cloud Publishing</h3><p class="feature-body">Aggregated field data pushed to AWS IoT Core, Azure IoT Hub, or EMQX for dashboarding and analytics.</p></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Cloud -->
+  <div id="cloud" class="service-section reveal">
+    <div class="svc-anchor"></div>
+    <div class="service-header">
+      <span class="svc-icon-big">☁️</span>
+      <div>
+        <span class="eyebrow">Cloud</span>
+        <h2 class="svc-title">Cloud-Connected Embedded Systems</h2>
+        <p class="svc-desc">Full IoT pipeline: device firmware → MQTT broker → AWS IoT Core / Azure IoT Hub → time-series database → Grafana or custom dashboard. Experience with EMQX, Mosquitto, Firebase, and Docker-based deployments on Raspberry Pi.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">AWS IoT Core</span><span class="tech-tag">Azure IoT Hub</span><span class="tech-tag">Firebase</span>
+          <span class="tech-tag">EMQX</span><span class="tech-tag">Mosquitto</span><span class="tech-tag">Grafana</span><span class="tech-tag">Docker</span>
+        </div>
+        <div class="pricing-note"><span>Starting from</span><strong>$150</strong><span>— Fixed Price</span></div>
+      </div>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-item"><span class="feature-bullet">01</span><h3 class="feature-title">Full IoT Pipeline</h3><p class="feature-body">Firmware to dashboard in one scope — device data, broker, cloud ingestion, storage, and visualization.</p></div>
+      <div class="feature-item"><span class="feature-bullet">02</span><h3 class="feature-title">Time-Series Storage</h3><p class="feature-body">InfluxDB, TimescaleDB, or Firebase Realtime DB for high-frequency sensor data with historical queries.</p></div>
+      <div class="feature-item"><span class="feature-bullet">03</span><h3 class="feature-title">Grafana Dashboards</h3><p class="feature-body">Real-time monitoring panels, threshold alerts, and multi-device fleet views.</p></div>
+      <div class="feature-item"><span class="feature-bullet">04</span><h3 class="feature-title">Docker Deployments</h3><p class="feature-body">Containerized MQTT brokers and backend services on Raspberry Pi or cloud VMs for self-hosted solutions.</p></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BLE / Wi-Fi -->
+  <div id="ble" class="service-section reveal">
+    <div class="svc-anchor"></div>
+    <div class="service-header">
+      <span class="svc-icon-big">📡</span>
+      <div>
+        <span class="eyebrow">Wireless</span>
+        <h2 class="svc-title">BLE &amp; Wi-Fi Device Development</h2>
+        <p class="svc-desc">Bluetooth Low Energy firmware for sensor devices, wearables, and gateways. Custom BLE GATT profiles, DFU over BLE, Wi-Fi provisioning, WPA2 enterprise, and mesh networking on ESP32.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">BLE GATT</span><span class="tech-tag">DFU over BLE</span><span class="tech-tag">Wi-Fi Mesh</span>
+          <span class="tech-tag">WPA2 Enterprise</span><span class="tech-tag">ESP32</span><span class="tech-tag">Provisioning</span>
+        </div>
+        <div class="pricing-note"><span>Starting from</span><strong>$100</strong><span>— Fixed Price</span></div>
+      </div>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-item"><span class="feature-bullet">01</span><h3 class="feature-title">Custom GATT Profiles</h3><p class="feature-body">Bespoke BLE services and characteristics for sensor data, device control, and configuration.</p></div>
+      <div class="feature-item"><span class="feature-bullet">02</span><h3 class="feature-title">DFU over BLE</h3><p class="feature-body">Firmware updates delivered wirelessly via Bluetooth — Nordic DFU compatible.</p></div>
+      <div class="feature-item"><span class="feature-bullet">03</span><h3 class="feature-title">Wi-Fi Provisioning</h3><p class="feature-body">Smartphone-based network configuration for production devices — zero hard-coded credentials.</p></div>
+      <div class="feature-item"><span class="feature-bullet">04</span><h3 class="feature-title">ESP-MESH Networking</h3><p class="feature-body">Self-healing wireless mesh networks for large-area sensor deployments with single gateway uplink.</p></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Mobile -->
+  <div id="mobile" class="service-section reveal">
+    <div class="svc-anchor"></div>
+    <div class="service-header">
+      <span class="svc-icon-big">📱</span>
+      <div>
+        <span class="eyebrow">Mobile</span>
+        <h2 class="svc-title">Flutter Mobile Apps for IoT</h2>
+        <p class="svc-desc">Cross-platform iOS and Android apps that connect to your hardware via BLE, MQTT, or REST API. Real-time sensor dashboards, device configuration screens, push alerts, and OTA trigger from mobile.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">Flutter</span><span class="tech-tag">Dart</span><span class="tech-tag">Firebase</span>
+          <span class="tech-tag">BLE</span><span class="tech-tag">MQTT</span><span class="tech-tag">REST API</span><span class="tech-tag">Push Alerts</span>
+        </div>
+        <div class="pricing-note"><span>Starting from</span><strong>$250</strong><span>— Fixed Price</span></div>
+      </div>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-item"><span class="feature-bullet">01</span><h3 class="feature-title">Real-Time Dashboards</h3><p class="feature-body">Live sensor gauges, charts, and device status panels updated via MQTT or BLE notifications.</p></div>
+      <div class="feature-item"><span class="feature-bullet">02</span><h3 class="feature-title">Device Configuration</h3><p class="feature-body">In-app settings screens to configure thresholds, sampling rates, and network parameters wirelessly.</p></div>
+      <div class="feature-item"><span class="feature-bullet">03</span><h3 class="feature-title">OTA Trigger</h3><p class="feature-body">Initiate firmware updates from the mobile app with progress tracking and error recovery.</p></div>
+      <div class="feature-item"><span class="feature-bullet">04</span><h3 class="feature-title">iOS &amp; Android</h3><p class="feature-body">One codebase, both platforms — deployed to App Store and Play Store from a single Flutter project.</p></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Web -->
+  <div id="web" class="service-section reveal">
+    <div class="svc-anchor"></div>
+    <div class="service-header">
+      <span class="svc-icon-big">🌐</span>
+      <div>
+        <span class="eyebrow">Web Development</span>
+        <h2 class="svc-title">Full-Stack Web Development</h2>
+        <p class="svc-desc">Secure, scalable web applications and enterprise APIs using .NET Core, React.js, Django, and Flask. Microservices, JWT auth, Azure AD integration, CI/CD pipelines, and Docker deployments.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">.NET Core</span><span class="tech-tag">ASP.NET</span><span class="tech-tag">React.js</span>
+          <span class="tech-tag">Django</span><span class="tech-tag">Flask</span><span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">Azure</span><span class="tech-tag">JWT</span><span class="tech-tag">Docker</span>
+        </div>
+        <div class="pricing-note"><span>Starting from</span><strong>$150</strong><span>— Fixed Price</span></div>
+      </div>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-item"><span class="feature-bullet">01</span><h3 class="feature-title">REST API Design</h3><p class="feature-body">Clean, versioned APIs with Swagger docs, rate limiting, JWT/OAuth2 auth, and comprehensive error handling.</p></div>
+      <div class="feature-item"><span class="feature-bullet">02</span><h3 class="feature-title">React Dashboards</h3><p class="feature-body">Interactive SaaS dashboards with real-time data, charts, user management, and role-based access control.</p></div>
+      <div class="feature-item"><span class="feature-bullet">03</span><h3 class="feature-title">Microservices</h3><p class="feature-body">Decoupled .NET or Python services communicating via Azure Service Bus or REST — containerized with Docker.</p></div>
+      <div class="feature-item"><span class="feature-bullet">04</span><h3 class="feature-title">Database Design</h3><p class="feature-body">Efficient schema design, indexing, query optimization, and migrations for SQL Server and PostgreSQL.</p></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PCB -->
+  <div id="pcb" class="service-section reveal">
+    <div class="svc-anchor"></div>
+    <div class="service-header">
+      <span class="svc-icon-big">🔌</span>
+      <div>
+        <span class="eyebrow">Hardware</span>
+        <h2 class="svc-title">PCB Design &amp; Prototyping</h2>
+        <p class="svc-desc">Schematic capture and PCB layout in KiCad, EasyEDA, and Altium Designer. ESP32 and STM32 custom boards, power supply design, EMC considerations, and Gerber files ready for manufacture.</p>
+        <div class="tech-tags">
+          <span class="tech-tag">KiCad</span><span class="tech-tag">EasyEDA</span><span class="tech-tag">Altium Designer</span>
+          <span class="tech-tag">Proteus</span><span class="tech-tag">Gerber</span><span class="tech-tag">DFM</span><span class="tech-tag">EMC</span>
+        </div>
+        <div class="pricing-note"><span>Starting from</span><strong>$100</strong><span>— Fixed Price</span></div>
+      </div>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-item"><span class="feature-bullet">01</span><h3 class="feature-title">Schematic Capture</h3><p class="feature-body">Clean schematics with proper hierarchy, annotation, and BOM generation for hand-off to manufacturing.</p></div>
+      <div class="feature-item"><span class="feature-bullet">02</span><h3 class="feature-title">PCB Layout</h3><p class="feature-body">Multi-layer layouts with controlled impedance traces, pour management, and silkscreen documentation.</p></div>
+      <div class="feature-item"><span class="feature-bullet">03</span><h3 class="feature-title">Power Supply Design</h3><p class="feature-body">LDO and switching regulators, battery management ICs, and USB-C power delivery circuits.</p></div>
+      <div class="feature-item"><span class="feature-bullet">04</span><h3 class="feature-title">DFM Review</h3><p class="feature-body">Design-for-manufacture checks before Gerber export — trace widths, via sizes, clearances, and panelization.</p></div>
+    </div>
+  </div>
+
+  <br/><br/>
+  <div style="text-align:center" class="reveal">
+    <p style="color:var(--text-dim);margin-bottom:1.5rem;font-size:0.95rem;">Ready to talk through your project?</p>
+    <a href="contact.html" class="btn-primary">Discuss Your Project →</a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Logic<span>Mesh</span> Solutions</div>
+      <div class="footer-tagline">Embedded &amp; cloud engineering from Karachi</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a><a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a><a href="team.html">Team</a>
+      <a href="why.html">Why Us</a><a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 <span>LogicMesh Solutions</span> · Karachi, Pakistan</p></div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

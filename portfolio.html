@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portfolio — LogicMesh Solutions</title>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+.filter-bar {
+  display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:2.5rem;
+}
+.filter-btn {
+  font-family:'DM Sans',sans-serif;font-size:0.75rem;font-weight:500;
+  padding:8px 16px;
+  border:1px solid var(--border);background:var(--surface);
+  color:var(--text-dim);cursor:pointer;transition:all 0.25s;border-radius:4px;
+}
+.filter-btn:hover, .filter-btn.active {
+  border-color:var(--accent);color:var(--accent);
+  background:var(--accent-soft);
+}
+
+.portfolio-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.35rem; }
+
+.p-card {
+  border:1px solid var(--border);background:var(--card);
+  overflow:hidden;position:relative;border-radius:8px;
+  transition:box-shadow 0.35s, border-color 0.35s;
+  box-shadow:var(--shadow-sm);
+}
+.p-card:hover { border-color:var(--border-bright);box-shadow:var(--shadow-md); }
+
+.p-img {
+  height:180px;display:flex;align-items:center;justify-content:center;
+  font-size:3.5rem;position:relative;overflow:hidden;
+  background:var(--bg2);
+}
+.p-img::after {
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%,var(--bg) 100%);
+}
+.bg-a { background:linear-gradient(145deg,#e8f0ec,#d4e4dc); }
+.bg-b { background:linear-gradient(145deg,#ede8e0,#ddd4c8); }
+.bg-c { background:linear-gradient(145deg,#e8e4ef,#d8d0e4); }
+.bg-d { background:linear-gradient(145deg,#e5ebe8,#d0ddd6); }
+
+.p-body { padding:1.35rem; }
+.p-cat {
+  font-size:0.68rem;font-weight:600;letter-spacing:0.06em;color:var(--accent-muted);
+  text-transform:uppercase;display:block;margin-bottom:0.45rem;
+}
+.p-title { font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.95rem;color:var(--heading);margin-bottom:0.5rem; }
+.p-desc { font-size:0.85rem;color:var(--text-dim);line-height:1.75;margin-bottom:0.85rem; }
+
+.p-card[data-hidden="true"] { display:none; }
+
+.case-study {
+  border:1px solid var(--border);background:var(--card);
+  padding:2.5rem;margin-bottom:2rem;position:relative;overflow:hidden;
+  border-radius:8px;
+  box-shadow:var(--shadow-sm);
+}
+.case-study::before {
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:var(--accent);
+}
+.case-title { font-family:'DM Sans',sans-serif;font-weight:700;font-size:1.05rem;color:var(--heading);margin-bottom:1rem; }
+.case-grid { display:grid;grid-template-columns:2fr 1fr;gap:2.5rem;align-items:start;margin-top:1.35rem; }
+.case-body p { font-size:0.9rem;color:var(--text-dim);line-height:1.85;margin-bottom:1rem; }
+.case-meta { display:flex;flex-direction:column;gap:0.85rem; }
+.meta-item { border-left:3px solid var(--accent);padding-left:1rem; }
+.meta-label { font-size:0.68rem;font-weight:600;color:var(--text-dim);text-transform:uppercase;display:block;letter-spacing:0.05em; }
+.meta-value { font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:600;color:var(--heading); }
+
+@media(max-width:768px){
+  .case-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<nav style="background-color: var(--heading);">
+  <a class="nav-logo" href="index.html">Logic<span>Mesh</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="why.html">Why Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-banner">
+  <div class="page-banner-inner">
+    <span class="banner-eyebrow">Portfolio</span>
+    <h1 class="banner-title">Our <span>Work</span></h1>
+    <p class="banner-sub">Examples of firmware, connectivity, and software we’ve delivered for clients and internal products.</p>
+    <div class="banner-line"></div>
+  </div>
+</div>
+
+<main>
+
+  <div class="filter-bar reveal">
+    <button class="filter-btn active" onclick="filterProjects('all',this)">All Projects</button>
+    <button class="filter-btn" onclick="filterProjects('firmware',this)">Firmware</button>
+    <button class="filter-btn" onclick="filterProjects('iot',this)">IoT & Cloud</button>
+    <button class="filter-btn" onclick="filterProjects('industrial',this)">Industrial</button>
+    <button class="filter-btn" onclick="filterProjects('web',this)">Web</button>
+    <button class="filter-btn" onclick="filterProjects('pcb',this)">PCB</button>
+    <button class="filter-btn" onclick="filterProjects('ml',this)">AI & ML</button>
+  </div>
+
+  <div class="portfolio-grid" id="projectGrid">
+
+    <div class="p-card reveal" data-category="firmware pcb">
+      <div class="p-img bg-a">🔌</div>
+      <div class="p-body">
+        <span class="p-cat">Firmware · PCB Design</span>
+        <h3 class="p-title">ESP32-S3 Smart Device with LCD & Relay Control</h3>
+        <p class="p-desc">Custom firmware for Waveshare LCD integration, BLE relay control, and ESP32-S3 PCB layout. Production-ready with OTA updates and deep sleep.</p>
+        <div class="tech-tags"><span class="tech-tag">ESP32-S3</span><span class="tech-tag">BLE</span><span class="tech-tag">FreeRTOS</span><span class="tech-tag">KiCad</span><span class="tech-tag">OTA</span></div>
+      </div>
+    </div>
+
+    <div class="p-card reveal" data-category="iot firmware">
+      <div class="p-img bg-b">💧</div>
+      <div class="p-body">
+        <span class="p-cat">IoT · Cloud · Dashboard</span>
+        <h3 class="p-title">Smart Water Management System</h3>
+        <p class="p-desc">ESP32-based water monitoring with MQTT pipeline, real-time IoT dashboard, flow sensors, and remote control via Flutter mobile app.</p>
+        <div class="tech-tags"><span class="tech-tag">ESP32</span><span class="tech-tag">MQTT</span><span class="tech-tag">AWS IoT</span><span class="tech-tag">Flutter</span><span class="tech-tag">Firebase</span></div>
+      </div>
+    </div>
+
+    <div class="p-card reveal" data-category="industrial firmware">
+      <div class="p-img bg-c">🌡️</div>
+      <div class="p-body">
+        <span class="p-cat">Industrial · HVAC</span>
+        <h3 class="p-title">Multi-Zone HVAC Automation System</h3>
+        <p class="p-desc">STM32 firmware with Modbus RTU sensors, FreeRTOS PID loop control, and Azure IoT Hub telemetry. Designed for commercial buildings with 24/7 reliability.</p>
+        <div class="tech-tags"><span class="tech-tag">STM32</span><span class="tech-tag">Modbus RTU</span><span class="tech-tag">PID</span><span class="tech-tag">Azure IoT</span><span class="tech-tag">FreeRTOS</span></div>
+      </div>
+    </div>
+
+    <div class="p-card reveal" data-category="industrial iot">
+      <div class="p-img bg-a">⚡</div>
+      <div class="p-body">
+        <span class="p-cat">Energy · IoT</span>
+        <h3 class="p-title">Three-Phase Energy Monitoring System</h3>
+        <p class="p-desc">Real-time monitoring of voltage, current, power factor, and kWh per circuit. MQTT data pipeline with Grafana dashboard and automated alert management.</p>
+        <div class="tech-tags"><span class="tech-tag">ESP32</span><span class="tech-tag">MQTT</span><span class="tech-tag">Grafana</span><span class="tech-tag">RS-485</span><span class="tech-tag">InfluxDB</span></div>
+      </div>
+    </div>
+
+    <div class="p-card reveal" data-category="iot firmware">
+      <div class="p-img bg-b">📡</div>
+      <div class="p-body">
+        <span class="p-cat">IoT · OLED · Sensors</span>
+        <h3 class="p-title">ESP32 OLED Real-Time Sensor Dashboard</h3>
+        <p class="p-desc">I2C-based OLED display showing live temperature, humidity, pressure, and CO2 readings. Custom UI layout with animated graphs and alert indicators.</p>
+        <div class="tech-tags"><span class="tech-tag">ESP32</span><span class="tech-tag">I2C</span><span class="tech-tag">OLED</span><span class="tech-tag">C++</span><span class="tech-tag">SPI</span></div>
+      </div>
+    </div>
+
+    <div class="p-card reveal" data-category="industrial firmware">
+      <div class="p-img bg-d">🔧</div>
+      <div class="p-body">
+        <span class="p-cat">Automation · PIR · Actuator</span>
+        <h3 class="p-title">PIR Sensor Activation for Linear Actuator</h3>
+        <p class="p-desc">Arduino-based PIR motion detection triggering a linear actuator with configurable delay, hold time, and debounce logic for automated door/gate systems.</p>
+        <div class="tech-tags"><span class="tech-tag">Arduino</span><span class="tech-tag">PIR</span><span class="tech-tag">Actuator</span><span class="tech-tag">Embedded C</span></div>
+      </div>
+    </div>
+
+    <div class="p-card reveal" data-category="iot web">
+      <div class="p-img bg-c">🌐</div>
+      <div class="p-body">
+        <span class="p-cat">IoT · MQTT Server</span>
+        <h3 class="p-title">Mosquitto MQTT Server Setup & Demo</h3>
+        <p class="p-desc">Full installation, TLS configuration, ACL rules, and live demonstration of Mosquitto MQTT broker for a client's IoT infrastructure deployment.</p>
+        <div class="tech-tags"><span class="tech-tag">Mosquitto</span><span class="tech-tag">MQTT</span><span class="tech-tag">TLS</span><span class="tech-tag">Docker</span><span class="tech-tag">Linux</span></div>
+      </div>
+    </div>
+
+    <div class="p-card reveal" data-category="web">
+      <div class="p-img bg-a">📊</div>
+      <div class="p-body">
+        <span class="p-cat">Web · Full-Stack · SaaS</span>
+        <h3 class="p-title">Real-Time Analytics Dashboard</h3>
+        <p class="p-desc">React + PostgreSQL SaaS dashboard serving 10k+ users. Secure REST APIs with JWT auth, role-based access, and Azure AD integration for a Fintech client.</p>
+        <div class="tech-tags"><span class="tech-tag">React</span><span class="tech-tag">.NET Core</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Azure AD</span></div>
+      </div>
+    </div>
+
+    <div class="p-card reveal" data-category="web pcb">
+      <div class="p-img bg-b">🛠️</div>
+      <div class="p-body">
+        <span class="p-cat">PCB · KiCad</span>
+        <h3 class="p-title">Complex PCB Layout for IoT Applications</h3>
+        <p class="p-desc">Multi-layer PCB design incorporating ESP32-WROOM-32, power management, RS-485 transceiver, and USB-C charging. Gerber files ready for production.</p>
+        <div class="tech-tags"><span class="tech-tag">KiCad</span><span class="tech-tag">ESP32</span><span class="tech-tag">RS-485</span><span class="tech-tag">USB-C</span><span class="tech-tag">DFM</span></div>
+      </div>
+    </div>
+
+    <div class="p-card reveal" data-category="ml web">
+      <div class="p-img bg-d">🩸</div>
+      <div class="p-body">
+        <span class="p-cat">AI · Python · Research</span>
+        <h3 class="p-title">Blood Group Detection via Fingerprint</h3>
+        <p class="p-desc">Machine learning model for non-invasive blood group detection using fingerprint image analysis with Django backend and REST API for clinical integration.</p>
+        <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">ML</span><span class="tech-tag">Django</span><span class="tech-tag">OpenCV</span><span class="tech-tag">REST API</span></div>
+      </div>
+    </div>
+
+    <div class="p-card reveal" data-category="web">
+      <div class="p-img bg-c">🏗️</div>
+      <div class="p-body">
+        <span class="p-cat">Web · .NET MVC</span>
+        <h3 class="p-title">ASP.NET MVC Web Application</h3>
+        <p class="p-desc">Full-featured ASP.NET MVC application with Entity Framework, SQL Server, authentication, admin panel, and responsive UI for a business management client.</p>
+        <div class="tech-tags"><span class="tech-tag">ASP.NET MVC</span><span class="tech-tag">C#</span><span class="tech-tag">SQL Server</span><span class="tech-tag">Entity Framework</span></div>
+      </div>
+    </div>
+
+    <div class="p-card reveal" data-category="iot industrial">
+      <div class="p-img bg-a">🏭</div>
+      <div class="p-body">
+        <span class="p-cat">Industrial · Multi-Sensor</span>
+        <h3 class="p-title">Environmental Multi-Sensor IoT Network</h3>
+        <p class="p-desc">Wireless sensor nodes for temperature, humidity, pressure, CO2, and motion. BLE gateway aggregation with cloud storage and configurable alert thresholds.</p>
+        <div class="tech-tags"><span class="tech-tag">ESP32</span><span class="tech-tag">BLE</span><span class="tech-tag">AWS IoT</span><span class="tech-tag">FreeRTOS</span><span class="tech-tag">MQTT</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <br/><br/>
+
+  <!-- Featured Case Study -->
+  <div style="margin-top:4rem">
+    <p class="eyebrow reveal" style="text-align:center;margin-bottom:2rem;">Case study</p>
+    <div class="case-study reveal">
+      <span class="eyebrow green">Production deployment</span>
+      <h3 class="case-title">ESP32-S3 Smart Device — Full Stack IoT System</h3>
+      <div class="case-grid">
+        <div class="case-body">
+          <p>Client required a complete embedded system integrating a Waveshare LCD display, BLE relay control, and multiple sensor inputs — all running on a custom ESP32-S3 PCB designed in KiCad.</p>
+          <p>We delivered full firmware (FreeRTOS task architecture, BLE GATT server, display driver, OTA) plus the PCB layout with DFM-reviewed Gerber files ready for factory production.</p>
+          <p>The client rated the collaboration <strong style="color:var(--success)">5.0 ★</strong> — "the collaboration was a success. The initial phase progressed rapidly, and he contributed valuable new ideas."</p>
+          <div class="tech-tags" style="margin-top:1.5rem">
+            <span class="tech-tag">ESP32-S3</span><span class="tech-tag">FreeRTOS</span><span class="tech-tag">BLE GATT</span>
+            <span class="tech-tag">Waveshare LCD</span><span class="tech-tag">KiCad PCB</span><span class="tech-tag">OTA Updates</span>
+          </div>
+        </div>
+        <div class="case-meta">
+          <div class="meta-item"><span class="meta-label">Platform</span><span class="meta-value">ESP32-S3</span></div>
+          <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-value">7 Months</span></div>
+          <div class="meta-item"><span class="meta-label">Rating</span><span class="meta-value" style="color:var(--success)">5.0 ★ Upwork</span></div>
+          <div class="meta-item"><span class="meta-label">Deliverables</span><span class="meta-value">Firmware + PCB</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:4rem" class="reveal">
+    <p style="color:var(--text-dim);margin-bottom:1.25rem;font-size:0.95rem;">Tell us about your project</p>
+    <a href="contact.html" class="btn-primary">Let's Build It →</a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Logic<span>Mesh</span> Solutions</div>
+      <div class="footer-tagline">Embedded &amp; cloud engineering from Karachi</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a><a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a><a href="team.html">Team</a>
+      <a href="why.html">Why Us</a><a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 <span>LogicMesh Solutions</span> · Karachi, Pakistan</p></div>
+</footer>
+<script src="js/main.js"></script>
+<script>
+function filterProjects(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.p-card').forEach(card => {
+    if (cat === 'all' || card.dataset.category.includes(cat)) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>

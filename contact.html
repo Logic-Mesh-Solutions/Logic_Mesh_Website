@@ -363,14 +363,47 @@
             <label for="service">Service Required *</label>
             <select id="service" required>
               <option value="">Select a service...</option>
-              <option>IoT Firmware Development (ESP32 / STM32)</option>
-              <option>Industrial Automation & Modbus Integration</option>
-              <option>Cloud-Connected Systems (AWS / Azure)</option>
-              <option>BLE & Wi-Fi Device Development</option>
-              <option>Flutter Mobile App for IoT</option>
-              <option>Full-Stack Web Development (.NET / React / Django)</option>
-              <option>PCB Design & Prototyping</option>
-              <option>End-to-End IoT System (Full Stack)</option>
+
+              <!-- Embedded / IoT -->
+              <option>Custom Embedded Firmware (ESP32 / STM32 / Bare-Metal)</option>
+              <option>Real-Time Systems (FreeRTOS / Multitasking)</option>
+              <option>Sensor Integration & Data Acquisition Systems</option>
+              <option>Industrial Communication (Modbus / RS-485 / CAN)</option>
+              <option>BLE, Wi-Fi & IoT Connectivity Solutions</option>
+              <option>Low-Power IoT Device Optimization</option>
+
+              <!-- Hardware -->
+              <option>Custom PCB Design (KiCad / Multi-layer)</option>
+              <option>Hardware Prototyping & Testing</option>
+              <option>Electronics System Design & Debugging</option>
+
+              <!-- Cloud / IoT Backend -->
+              <option>IoT Cloud Integration (AWS IoT / Azure IoT)</option>
+              <option>MQTT Systems & Real-Time Data Pipelines</option>
+              <option>Device Monitoring Dashboards & Analytics</option>
+
+              <!-- Backend -->
+              <option>Backend Development (Python / Django / Flask)</option>
+              <option>REST API Development & Integration</option>
+              <option>Database Design (PostgreSQL / Firebase)</option>
+              <option>Machine Learning Integration (Computer Vision / AI)</option>
+
+              <!-- Web -->
+              <option>Full-Stack Web Apps (.NET Core / React)</option>
+              <option>Enterprise Web Applications & SaaS Platforms</option>
+              <option>Microservices Architecture & Docker Deployment</option>
+
+              <!-- Mobile -->
+              <option>Flutter Mobile App Development (Android & iOS)</option>
+              <option>IoT Mobile App (Device Control + Monitoring)</option>
+              <option>Secure Mobile Apps (Payments / APIs / Auth)</option>
+
+              <!-- Complete Systems -->
+              <option>End-to-End Product Development (Hardware + Software)</option>
+              <option>IoT MVP Development (Fast Prototyping)</option>
+              <option>Startup Product Development & Scaling</option>
+
+              <option>Consultation / System Architecture Design</option>
               <option>Other / Not sure</option>
             </select>
           </div>
@@ -382,14 +415,15 @@
               <option>1 Month</option>
               <option>2–3 Months</option>
               <option>3–6 Months</option>
+              <option>1–2 Years</option>
               <option>Flexible / Ongoing</option>
             </select>
           </div>
           <div class="fg full">
-            <label for="message">Project Description *</label>
+            <label for="message">Project Description</label>
             <textarea id="message"
               placeholder="Describe your project: What does it do? What hardware/platform? What's the biggest challenge? What does done look like?"
-              required oninput="updateCount()"></textarea>
+              oninput="updateCount()"></textarea>
             <div class="char-count"><span id="charCount">0</span> characters</div>
           </div>
         </div>

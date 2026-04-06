@@ -1,197 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Contact LogicMesh: IOT, AI, Embedded, ML, Web, App, Hardware and Firmware</title>
-<link rel="icon" href="images/LogicMesh_Logo_icon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact LogicMesh: IOT, AI, Embedded, ML, Web, App, Hardware and Firmware</title>
+  <link rel="icon" href="images/LogicMesh_Logo_icon.png">
 
-<link rel="stylesheet" href="css/style.css"/>
-<style>
-.contact-layout {
-  display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;align-items:start;
-  max-width:1100px;margin:0 auto;
-}
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 4rem;
+      align-items: start;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-.info-panel { display:flex;flex-direction:column;gap:2rem; }
-.info-block {
-  padding:1.6rem;border:1px solid var(--border);background:var(--card);
-  transition:border-color 0.25s, box-shadow 0.25s;
-  border-radius:6px;
-  box-shadow:var(--shadow-sm);
-}
-.info-block:hover { border-color:var(--border-bright); }
-.info-label { font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:0.08em;color:var(--text-dim);text-transform:uppercase;display:block;margin-bottom:0.35rem; }
-.info-value { font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;color:var(--heading); }
-.info-value a { color:var(--accent);text-decoration:none;transition:color 0.2s;font-size:0.9rem; }
-.info-value a:hover { color:var(--accent-hover);text-decoration:underline; }
-.info-sub { font-size:0.85rem;color:var(--text-dim);margin-top:0.35rem;line-height:1.55; }
+    .info-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
 
-.status-dot { display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--success);margin-right:0.5rem; }
+    .info-block {
+      padding: 1.6rem;
+      border: 1px solid var(--border);
+      background: var(--card);
+      transition: border-color 0.25s, box-shadow 0.25s;
+      border-radius: 6px;
+      box-shadow: var(--shadow-sm);
+    }
 
-.platform-links { display:flex;flex-direction:column;gap:0.75rem; }
-.platform-link {
-  display:flex;align-items:center;gap:1rem;
-  padding:0.95rem 1.1rem;border:1px solid var(--border);
-  background:var(--card);text-decoration:none;
-  transition:border-color 0.25s, box-shadow 0.25s;
-  border-radius:4px;
-}
-.platform-link:hover { border-color:var(--border-bright);box-shadow:var(--shadow-sm); }
-.platform-link .pl-icon { font-size:1.2rem;flex-shrink:0; }
-.platform-link .pl-name { font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;color:var(--heading); }
-.platform-link .pl-sub { font-size:0.72rem;color:var(--text-dim); }
-.platform-link .pl-arrow { margin-left:auto;color:var(--accent);opacity:0;transition:opacity 0.25s; }
-.platform-link:hover .pl-arrow { opacity:1; }
+    .info-block:hover {
+      border-color: var(--border-bright);
+    }
 
-.form-panel {
-  border:1px solid var(--border);background:var(--card);
-  padding:2.5rem;position:relative;overflow:hidden;
-  border-radius:6px;
-  box-shadow:var(--shadow-sm);
-}
-.form-panel::before {
-  content:'';position:absolute;top:-60px;right:-60px;
-  width:200px;height:200px;border-radius:50%;
-  background:radial-gradient(circle,rgba(30,92,74,0.06),transparent 70%);
-  pointer-events:none;
-}
-.form-title { font-family:'DM Sans',sans-serif;font-weight:700;font-size:1.2rem;color:var(--heading);margin-bottom:0.35rem; }
-.form-sub { font-size:0.9rem;color:var(--text-dim);margin-bottom:1.75rem;display:block; }
+    .info-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
 
-.fgrid { display:grid;grid-template-columns:1fr 1fr;gap:1rem; }
-.fg { display:flex;flex-direction:column;gap:0.4rem; }
-.fg.full { grid-column:1/-1; }
+    .info-value {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--heading);
+    }
 
-label {
-  font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:600;
-  letter-spacing:0.04em;color:var(--text-dim);
-}
-input, textarea, select {
-  background:var(--surface);border:1px solid var(--border);
-  color:var(--text);padding:11px 14px;
-  font-family:'Source Sans 3',sans-serif;font-size:0.92rem;
-  outline:none;transition:border-color 0.2s, box-shadow 0.2s;width:100%;
-  border-radius:4px;
-}
-input:focus, textarea:focus, select:focus {
-  border-color:var(--accent);
-  box-shadow:0 0 0 3px var(--accent-soft);
-}
-select option { background:var(--surface);color:var(--heading); }
-textarea { height:130px;resize:vertical; }
+    .info-value a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 0.9rem;
+    }
 
-.char-count { font-size:0.75rem;color:var(--text-dim);text-align:right;margin-top:0.3rem; }
+    .info-value a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
 
-.submit-btn {
-  width:100%;margin-top:1.25rem;
-  font-family:'DM Sans',sans-serif;font-size:0.85rem;
-  letter-spacing:0.04em;font-weight:600;text-transform:uppercase;
-  padding:14px;background:var(--accent);
-  border:1px solid var(--accent);color:#fff;cursor:pointer;
-  transition:background 0.25s, border-color 0.25s;
-  border-radius:4px;
-}
-.submit-btn:hover { background:var(--accent-hover);border-color:var(--accent-hover); }
-.submit-btn:disabled { opacity:0.65;cursor:not-allowed; }
+    .info-sub {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-top: 0.35rem;
+      line-height: 1.55;
+    }
 
-.success-msg {
-  display:none;text-align:center;padding:2rem;
-  border:1px solid var(--border);background:var(--bg);
-  margin-top:1.5rem;border-radius:6px;
-}
-.success-msg .s-icon { font-size:2.25rem;display:block;margin-bottom:1rem; }
-.success-msg h3 { font-family:'DM Sans',sans-serif;font-weight:700;color:var(--success);margin-bottom:0.5rem; }
-.success-msg p { font-size:0.9rem;color:var(--text-dim); }
+    .status-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+      margin-right: 0.5rem;
+    }
 
-@media(max-width:900px){
-  .contact-layout { grid-template-columns:1fr; }
-  .fgrid { grid-template-columns:1fr; }
-}
-</style>
+    .platform-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .platform-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.95rem 1.1rem;
+      border: 1px solid var(--border);
+      background: var(--card);
+      text-decoration: none;
+      transition: border-color 0.25s, box-shadow 0.25s;
+      border-radius: 4px;
+    }
+
+    .platform-link:hover {
+      border-color: var(--border-bright);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .platform-link .pl-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .platform-link .pl-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--heading);
+    }
+
+    .platform-link .pl-sub {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+    }
+
+    .platform-link .pl-arrow {
+      margin-left: auto;
+      color: var(--accent);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .platform-link:hover .pl-arrow {
+      opacity: 1;
+    }
+
+    .form-panel {
+      border: 1px solid var(--border);
+      background: var(--card);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .form-panel::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(30, 92, 74, 0.06), transparent 70%);
+      pointer-events: none;
+    }
+
+    .form-title {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--heading);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-sub {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      margin-bottom: 1.75rem;
+      display: block;
+    }
+
+    .fgrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .fg {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .fg.full {
+      grid-column: 1/-1;
+    }
+
+    label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--text-dim);
+    }
+
+    input,
+    textarea,
+    select {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 11px 14px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.92rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+      border-radius: 4px;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+
+    select option {
+      background: var(--surface);
+      color: var(--heading);
+    }
+
+    textarea {
+      height: 130px;
+      resize: vertical;
+    }
+
+    .char-count {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      text-align: right;
+      margin-top: 0.3rem;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 1.25rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 14px;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.25s, border-color 0.25s;
+      border-radius: 4px;
+    }
+
+    .submit-btn:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      margin-top: 1.5rem;
+      border-radius: 6px;
+    }
+
+    .success-msg .s-icon {
+      font-size: 2.25rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .success-msg h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      color: var(--success);
+      margin-bottom: 0.5rem;
+    }
+
+    .success-msg p {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+
+    @media(max-width:900px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .fgrid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="grid-bg"></div>
-<nav style="background-color: var(--heading);">
-  <a class="nav-logo" href="index.html">Logic<span>Mesh</span></a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="team.html">Team</a></li>
-    <li><a href="why.html">Why Us</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <div class="hamburger" id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
-</nav>
+  <div class="grid-bg"></div>
+  <nav style="background-color: var(--heading);">
+    <a class="nav-logo" href="index.html">Logic<span>Mesh</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="why.html">Why Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  </nav>
 
-<div class="page-banner">
-  <div class="page-banner-inner">
-    <span class="banner-eyebrow">Contact</span>
-    <h1 class="banner-title">Start a <span>project</span></h1>
-    <p class="banner-sub">Share a short overview and we’ll reply with next steps — usually the same day for weekday inquiries.</p>
-    <div class="banner-line"></div>
-  </div>
-</div>
-
-<main>
-  <div class="contact-layout">
-
-    <!-- Info Panel -->
-    <div class="info-panel reveal">
-
-      <div class="info-block">
-        <span class="info-label">Availability</span>
-        <div class="info-value"><span class="status-dot"></span>Available for Projects</div>
-        <div class="info-sub">We're actively taking on new clients. Minimum project size $100.</div>
-      </div>
-
-      <div class="info-block">
-        <span class="info-label">Response time</span>
-        <div class="info-value">Same day (weekdays)</div>
-        <div class="info-sub">We aim to reply within a few hours. A discovery call is often scheduled within one business day. You’ll get a written scope before work starts.</div>
-      </div>
-      
-      <div class="info-block">
-        <span class="info-label">Location</span>
-        <div class="info-value">Karachi, Pakistan</div>
-        <div class="info-sub">GMT+5 · Available for remote work globally. Async and scheduled calls welcome.</div>
-      </div>
-
-      <div class="info-block">
-        <span class="info-label">Languages</span>
-        <div class="info-value">English · Urdu</div>
-        <div class="info-sub">Fluent English communication across all time zones.</div>
-      </div>
-
-      <div class="info-block">
-        <span class="info-label" style="display:block;margin-bottom:0.8rem">Find us online</span>
-        <div class="platform-links">
-          <a href="https://www.upwork.com/agencies/1984561988104590650/" target="_blank" class="platform-link">
-            <span class="pl-icon">💼</span>
-            <div><div class="pl-name">Upwork Agency</div><div class="pl-sub">LogicMeshSolutions</div></div>
-            <span class="pl-arrow">→</span>
-          </a>
-          <a href="https://github.com/ShaikaibNaqvi" target="_blank" class="platform-link">
-            <span class="pl-icon">💻</span>
-            <div><div class="pl-name">GitHub</div><div class="pl-sub">Shakaib Naqvi</div></div>
-            <span class="pl-arrow">→</span>
-          </a>
-          <a href="#" class="platform-link">
-            <span class="pl-icon">🔗</span>
-            <div><div class="pl-name">LinkedIn</div><div class="pl-sub">LogicMesh Solutions</div></div>
-            <span class="pl-arrow">→</span>
-          </a>
-        </div>
-      </div>
-      
-      <div class="info-block">
-        <span class="info-label">Typical project size</span>
-        <div class="info-value">$100 USD</div>
-        <div class="info-sub">Fixed price and hourly engagements. Rates from $15–$40/hr depending on service.</div>
-      </div>
+  <div class="page-banner">
+    <div class="page-banner-inner">
+      <span class="banner-eyebrow">Contact</span>
+      <h1 class="banner-title">Start a <span>project</span></h1>
+      <p class="banner-sub">Share a short overview and we’ll reply with next steps — usually the same day for weekday
+        inquiries.</p>
+      <div class="banner-line"></div>
     </div>
-    
+  </div>
+
+  <main>
+
     <!-- Form Panel -->
     <div class="form-panel reveal">
       <h2 class="form-title">Project inquiry</h2>
@@ -201,15 +337,15 @@ textarea { height:130px;resize:vertical; }
         <div class="fgrid">
           <div class="fg">
             <label for="name">Full Name *</label>
-            <input type="text" id="name" placeholder="John Smith" required/>
+            <input type="text" id="name" placeholder="John Smith" required />
           </div>
           <div class="fg">
             <label for="email">Email Address *</label>
-            <input type="email" id="email" placeholder="john@company.com" required/>
+            <input type="email" id="email" placeholder="john@company.com" required />
           </div>
           <div class="fg">
             <label for="company">Company / Organization</label>
-            <input type="text" id="company" placeholder="Acme Corp (optional)"/>
+            <input type="text" id="company" placeholder="Acme Corp (optional)" />
           </div>
           <div class="fg">
             <label for="budget">Budget Range *</label>
@@ -251,7 +387,9 @@ textarea { height:130px;resize:vertical; }
           </div>
           <div class="fg full">
             <label for="message">Project Description *</label>
-            <textarea id="message" placeholder="Describe your project: What does it do? What hardware/platform? What's the biggest challenge? What does done look like?" required oninput="updateCount()"></textarea>
+            <textarea id="message"
+              placeholder="Describe your project: What does it do? What hardware/platform? What's the biggest challenge? What does done look like?"
+              required oninput="updateCount()"></textarea>
             <div class="char-count"><span id="charCount">0</span> characters</div>
           </div>
         </div>
@@ -263,38 +401,40 @@ textarea { height:130px;resize:vertical; }
       </div>
     </div>
 
-  </div>
-</main>
+  </main>
 
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-logo">Logic<span>Mesh</span> Solutions</div>
-      <div class="footer-tagline">Embedded &amp; cloud engineering from Karachi</div>
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Logic<span>Mesh</span> Solutions</div>
+        <div class="footer-tagline">Embedded &amp; cloud engineering from Karachi</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a><a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a><a href="team.html">Team</a>
+        <a href="why.html">Why Us</a><a href="contact.html">Contact</a>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="index.html">Home</a><a href="services.html">Services</a>
-      <a href="portfolio.html">Portfolio</a><a href="team.html">Team</a>
-      <a href="why.html">Why Us</a><a href="contact.html">Contact</a>
+    <div class="footer-bottom">
+      <p>© 2025 <span>LogicMesh Solutions</span> · Karachi, Pakistan</p>
     </div>
-  </div>
-  <div class="footer-bottom"><p>© 2025 <span>LogicMesh Solutions</span> · Karachi, Pakistan</p></div>
-</footer>
-<script src="js/main.js"></script>
-<script>
-function updateCount(){
-  document.getElementById('charCount').textContent = document.getElementById('message').value.length;
-}
-function handleSubmit(e){
-  e.preventDefault();
-  const btn = document.getElementById('submitBtn');
-  btn.textContent = 'Sending…';
-  btn.disabled = true;
-  setTimeout(()=>{
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-  }, 1600);
-}
-</script>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    function updateCount() {
+      document.getElementById('charCount').textContent = document.getElementById('message').value.length;
+    }
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      setTimeout(() => {
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      }, 1600);
+    }
+  </script>
 </body>
+
 </html>

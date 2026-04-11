@@ -26,7 +26,7 @@
       /* background:
         radial-gradient(ellipse 70% 55% at 50% 20%, rgba(30, 92, 74, 0.06) 0%, transparent 55%),
         radial-gradient(ellipse 50% 40% at 85% 75%, rgba(139, 77, 31, 0.05) 0%, transparent 50%); */
-        background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.45);
       pointer-events: none;
       z-index: 1;
     }
@@ -264,7 +264,7 @@
       flex-wrap: wrap;
     }
 
-    .background-video {
+    /* .background-video {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -275,7 +275,7 @@
       transform: translate(-50%, -50%);
       object-fit: cover;
       z-index: 0;
-    }
+    } */
 
     @media (max-width: 768px) {
       .intro-grid {
@@ -293,15 +293,15 @@
 <body>
   <div class="grid-bg"></div>
 
-  <nav>
+  <nav style="background-color: transparent;">
     <a class="nav-logo" href="index.html">Logic<span>Mesh</span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="team.html">Team</a></li>
+      <li><a href="coming-soon.html">Team</a></li>
       <li><a href="why.html">Why Us</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="coming-soon.html">Contact</a></li>
     </ul>
     <div class="hamburger" id="hamburger" onclick="toggleNav()">
       <span></span><span></span><span></span>
@@ -400,7 +400,7 @@
     <p class="reveal">Tell us what you’re building. We usually respond within a few hours and can schedule a short
       discovery call to align on scope and timeline.</p>
     <div class="cta-buttons reveal">
-      <a href="contact.html" class="btn-primary">Start a conversation</a>
+      <a href="coming-soon.html" class="btn-primary">Start a conversation</a>
       <a href="portfolio.html" class="btn-secondary" style="color: var(--accent);">See our work</a>
     </div>
   </div>
@@ -410,16 +410,25 @@
       <div>
         <div class="footer-logo">Logic<span>Mesh</span> Solutions</div>
         <div class="footer-tagline">Embedded &amp; cloud engineering from Karachi</div>
+
+        <!-- Contact Info (uses existing styles) -->
+        <div class="footer-links">
+          <div>Email: <a href="mailto:contact@logicmeshsolutions.com">contact@logicmeshsolutions.com</a></div>
+          <hr>
+          <div>Contact: <a href="tel:+923341728939">+92 334 1728939</a></div>
+        </div>
       </div>
+
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="portfolio.html">Portfolio</a>
-        <a href="team.html">Team</a>
+        <a href="coming-soon.html">Team</a>
         <a href="why.html">Why Us</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
+
     <div class="footer-bottom">
       <p>© 2026 <span>LogicMesh Solutions</span> · Karachi, Pakistan · All rights reserved.</p>
     </div>
@@ -428,111 +437,3 @@
 </body>
 
 </html>
-<!--
-  <p class="hero-tagline">Embedded systems · Field connectivity · Dashboards &amp; apps</p>
-  <div class="hero-ctas">
-    <a href="services.html" class="btn-primary">View services</a>
-    <a href="contact.html" class="btn-secondary">Get in touch</a>
-  </div>
-  <div class="hero-stats">
-    <div class="stat"><span class="stat-num">6</span><span class="stat-label">Core service areas</span></div>
-    <div class="stat"><span class="stat-num">3</span><span class="stat-label">Senior engineers</span></div>
-    <div class="stat"><span class="stat-num">Remote</span><span class="stat-label">Projects worldwide</span></div>
-    <div class="stat"><span class="stat-num">&lt; 4h</span><span class="stat-label">Typical first reply</span></div>
-</div>
-</div>
-</section>
-
-<div class="intro-strip">
-  <div class="intro-grid">
-    <div class="reveal">
-      <span class="intro-label">About us</span>
-      <h2 class="intro-heading">One team for <span>firmware, cloud, and product software</span></h2>
-      <p class="intro-body">
-        LogicMesh is an engineering practice focused on connected devices and the systems around them: embedded
-        firmware, industrial protocols, cloud backends, and the web and mobile apps your customers use.<br /><br />
-        We work with you from architecture through delivery — so sensors, gateways, APIs, and UIs stay aligned instead
-        of drifting apart across vendors.
-      </p>
-      <br />
-      <a href="why.html" class="btn-primary" style="margin-top:0.5rem">Why work with us</a>
-    </div>
-    <div class="intro-services reveal">
-      <a href="services.html#iot" class="intro-service-row">
-        <span class="icon">⚡</span>
-        <div>
-          <div class="svc-name">IoT firmware</div>
-          <div class="svc-sub">ESP32, STM32, FreeRTOS</div>
-        </div>
-        <span class="arrow">→</span>
-      </a>
-      <a href="services.html#industrial" class="intro-service-row">
-        <span class="icon">🏭</span>
-        <div>
-          <div class="svc-name">Industrial automation</div>
-          <div class="svc-sub">Modbus, RS-485, control</div>
-        </div>
-        <span class="arrow">→</span>
-      </a>
-      <a href="services.html#cloud" class="intro-service-row">
-        <span class="icon">☁️</span>
-        <div>
-          <div class="svc-name">Cloud integration</div>
-          <div class="svc-sub">AWS IoT, Azure, MQTT</div>
-        </div>
-        <span class="arrow">→</span>
-      </a>
-      <a href="services.html#web" class="intro-service-row">
-        <span class="icon">🌐</span>
-        <div>
-          <div class="svc-name">Web &amp; mobile</div>
-          <div class="svc-sub">.NET, React, Flutter</div>
-        </div>
-        <span class="arrow">→</span>
-      </a>
-      <a href="services.html#pcb" class="intro-service-row">
-        <span class="icon">🔌</span>
-        <div>
-          <div class="svc-name">PCB design</div>
-          <div class="svc-sub">KiCad, layout &amp; bring-up</div>
-        </div>
-        <span class="arrow">→</span>
-      </a>
-    </div>
-  </div>
-</div>
-
-<div class="cta-band">
-  <h2 class="reveal">Have a product or integration in mind?</h2>
-  <p class="reveal">Tell us what you’re building. We usually respond within a few hours and can schedule a short
-    discovery call to align on scope and timeline.</p>
-  <div class="cta-buttons reveal">
-    <a href="contact.html" class="btn-primary">Start a conversation</a>
-    <a href="portfolio.html" class="btn-secondary">See our work</a>
-  </div>
-</div>
-
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-logo">Logic<span>Mesh</span> Solutions</div>
-      <div class="footer-tagline">Embedded &amp; cloud engineering from Karachi</div>
-    </div>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="team.html">Team</a>
-      <a href="why.html">Why Us</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 <span>LogicMesh Solutions</span> · Karachi, Pakistan · All rights reserved.</p>
-  </div>
-</footer>
-<script src="js/main.js"></script>
-</body>
-
-</html>
--->

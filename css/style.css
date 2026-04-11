@@ -147,6 +147,8 @@ nav {
 .page-banner {
   padding: 140px 5% 72px;
   position: relative;
+  display: flex;
+  overflow: hidden;
   z-index: 1;
   border-bottom: 1px solid var(--border);
   background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
@@ -389,6 +391,19 @@ footer {
   color: var(--heading);
   font-weight: 500;
 }
+
+.background-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 0;
+    }
 
 /* ── ANIMATIONS ── */
 @keyframes fadeInDown {

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Optional: block unnecessary folders (uncomment if needed)
+# Disallow: /js/
+# Disallow: /images/
+
+Sitemap: https://logicmeshsolutions.com/sitemap.xml

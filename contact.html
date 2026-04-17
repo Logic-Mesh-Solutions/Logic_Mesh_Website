@@ -333,106 +333,59 @@
       <h2 class="form-title">Project inquiry</h2>
       <span class="form-sub">The more detail you share, the faster we can give a useful reply.</span>
 
-      <form id="contactForm" onsubmit="handleSubmit(event)">
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="5fa969a8-84d5-4b84-bc30-46bad14f7888">
+        <input type="hidden" name="subject" value="New Project Inquiry from LogicMesh">
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
         <div class="fgrid">
-          <div class="fg">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" placeholder="John Smith" required />
-          </div>
-          <div class="fg">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" placeholder="john@company.com" required />
-          </div>
-          <div class="fg">
-            <label for="company">Company / Organization</label>
-            <input type="text" id="company" placeholder="Acme Corp (optional)" />
-          </div>
-          <div class="fg">
-            <label for="budget">Budget Range *</label>
-            <select id="budget" required>
-              <option value="">Select budget...</option>
-              <option>Under $100</option>
-              <option>$100 – $500</option>
-              <option>$500 – $1,000</option>
-              <option>$1,000 – $5,000</option>
-              <option>$5,000 – $10,000</option>
-              <option>$10,000+</option>
-            </select>
-          </div>
-          <div class="fg full">
-            <label for="service">Service Required *</label>
-            <select id="service" required>
-              <option value="">Select a service...</option>
-
-              <!-- Embedded / IoT -->
-              <option>Custom Embedded Firmware (ESP32 / STM32 / Bare-Metal)</option>
-              <option>Real-Time Systems (FreeRTOS / Multitasking)</option>
-              <option>Sensor Integration & Data Acquisition Systems</option>
-              <option>Industrial Communication (Modbus / RS-485 / CAN)</option>
-              <option>BLE, Wi-Fi & IoT Connectivity Solutions</option>
-              <option>Low-Power IoT Device Optimization</option>
-
-              <!-- Hardware -->
-              <option>Custom PCB Design (KiCad / Multi-layer)</option>
-              <option>Hardware Prototyping & Testing</option>
-              <option>Electronics System Design & Debugging</option>
-
-              <!-- Cloud / IoT Backend -->
-              <option>IoT Cloud Integration (AWS IoT / Azure IoT)</option>
-              <option>MQTT Systems & Real-Time Data Pipelines</option>
-              <option>Device Monitoring Dashboards & Analytics</option>
-
-              <!-- Backend -->
-              <option>Backend Development (Python / Django / Flask)</option>
-              <option>REST API Development & Integration</option>
-              <option>Database Design (PostgreSQL / Firebase)</option>
-              <option>Machine Learning Integration (Computer Vision / AI)</option>
-
-              <!-- Web -->
-              <option>Full-Stack Web Apps (.NET Core / React)</option>
-              <option>Enterprise Web Applications & SaaS Platforms</option>
-              <option>Microservices Architecture & Docker Deployment</option>
-
-              <!-- Mobile -->
-              <option>Flutter Mobile App Development (Android & iOS)</option>
-              <option>IoT Mobile App (Device Control + Monitoring)</option>
-              <option>Secure Mobile Apps (Payments / APIs / Auth)</option>
-
-              <!-- Complete Systems -->
-              <option>End-to-End Product Development (Hardware + Software)</option>
-              <option>IoT MVP Development (Fast Prototyping)</option>
-              <option>Startup Product Development & Scaling</option>
-
-              <option>Consultation / System Architecture Design</option>
-              <option>Other / Not sure</option>
-            </select>
-          </div>
-          <div class="fg full">
-            <label for="timeline">Desired Timeline</label>
-            <select id="timeline">
-              <option value="">Select timeline...</option>
-              <option>ASAP (1–2 weeks)</option>
-              <option>1 Month</option>
-              <option>2–3 Months</option>
-              <option>3–6 Months</option>
-              <option>1–2 Years</option>
-              <option>Flexible / Ongoing</option>
-            </select>
-          </div>
-          <div class="fg full">
-            <label for="message">Project Description</label>
-            <textarea id="message"
-              placeholder="Describe your project: What does it do? What hardware/platform? What's the biggest challenge? What does done look like?"
-              oninput="updateCount()"></textarea>
-            <div class="char-count"><span id="charCount">0</span> characters</div>
-          </div>
+            <div class="fg">
+                <label for="name">Full Name *</label>
+                <input type="text" name="name" id="name" placeholder="John Smith" required />
+            </div>
+            <div class="fg">
+                <label for="email">Email Address *</label>
+                <input type="email" name="email" id="email" placeholder="john@company.com" required />
+            </div>
+            <div class="fg">
+                <label for="company">Company / Organization</label>
+                <input type="text" name="company" id="company" placeholder="Acme Corp (optional)" />
+            </div>
+            <div class="fg">
+                <label for="budget">Budget Range *</label>
+                <select name="budget" id="budget" required>
+                    <option value="">Select budget...</option>
+                    <option>$Under $100</option>
+                    <option>$100 – $500</option>
+                    <option>$500 – $1,000</option>
+                    <option>$1,000 – $5,000</option>
+                    <option>$5,000 – $10,000</option>
+                    <option>$10,000+</option>
+                </select>
+            </div>
+            <div class="fg full">
+                <label for="service">Service Required *</label>
+                <select name="service" id="service" required>
+                    <option value="">Select a service...</option>
+                    <option>Custom Embedded Firmware</option>
+                    <option>IoT Cloud Integration</option>
+                    <option>Full-Stack Web Apps</option>
+                    <option>Flutter Mobile App</option>
+                    </select>
+            </div>
+            <div class="fg full">
+                <label for="message">Project Description</label>
+                <textarea name="message" id="message" placeholder="Describe your project..." oninput="updateCount()" required></textarea>
+                <div class="char-count"><span id="charCount">0</span> characters</div>
+            </div>
         </div>
         <button type="submit" class="submit-btn" id="submitBtn">Send message</button>
-      </form>
-      <div class="success-msg" id="successMsg">
+    </form>
+
+    <div class="success-msg" id="successMsg">
+        <span class="s-icon">✅</span>
         <h3>Message Received</h3>
-        <p>We’ll review your note and follow up by email with next steps.</p>
-      </div>
+        <p>We’ll review your note and follow up at contact@logicmeshsolutions.com shortly.</p>
     </div>
 
   </main>
@@ -468,18 +421,49 @@
   <script src="js/main.js"></script>
   <script>
     function updateCount() {
-      document.getElementById('charCount').textContent = document.getElementById('message').value.length;
+        document.getElementById('charCount').textContent = document.getElementById('message').value.length;
     }
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = document.getElementById('submitBtn');
-      btn.textContent = 'Sending…';
-      btn.disabled = true;
-      setTimeout(() => {
-        document.getElementById('contactForm').style.display = 'none';
-        document.getElementById('successMsg').style.display = 'block';
-      }, 1600);
-    }
+
+    const form = document.getElementById('contactForm');
+    const result = document.getElementById('successMsg');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+        const btn = document.getElementById('submitBtn');
+        
+        btn.textContent = "Sending...";
+        btn.disabled = true;
+
+        fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    form.style.display = "none";
+                    result.style.display = "block";
+                } else {
+                    console.log(response);
+                    alert("Something went wrong. Please try again.");
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                alert("Submission failed. Check your internet.");
+            })
+            .then(function() {
+                btn.textContent = "Send message";
+                btn.disabled = false;
+            });
+    });
   </script>
 </body>
 

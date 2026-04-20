@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LogicMesh Solutions Home: IOT, AI, Embedded, ML, Web, App, Hardware and Firmware</title>
+  <title>LogicMesh Solutions Home: IoT, AI, Embedded, ML, Web, App, Hardware and Firmware</title>
   <link rel="icon" href="images/LogicMesh_Logo_icon.png">
   <link rel="stylesheet" href="css/style.css" />
   <style>
@@ -13,83 +13,175 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      /* LEFT ALIGN */
-      padding: 100px 5%;
+      padding: 112px 5% 64px;
       overflow: hidden;
-      background: none;
+      isolation: isolate;
+      background:
+        radial-gradient(circle at top right, rgba(30, 92, 74, 0.22), transparent 32%),
+        linear-gradient(135deg, rgba(8, 18, 16, 0.92), rgba(20, 34, 30, 0.74));
+    }
+
+    #hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.08), transparent 22%),
+        radial-gradient(circle at 85% 20%, rgba(255, 255, 255, 0.12), transparent 18%);
+      z-index: 1;
+      pointer-events: none;
     }
 
     .hero-glow {
       position: absolute;
       inset: 0;
-      /* background:
-        radial-gradient(ellipse 70% 55% at 50% 20%, rgba(30, 92, 74, 0.06) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 40% at 85% 75%, rgba(139, 77, 31, 0.05) 0%, transparent 50%); */
-      background: rgba(0, 0, 0, 0.45);
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.56)),
+        radial-gradient(circle at 72% 50%, rgba(30, 92, 74, 0.24), transparent 28%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-gridlines,
+    .hero-orbit,
+    .hero-orbit::before,
+    .hero-orbit::after {
+      position: absolute;
       pointer-events: none;
       z-index: 1;
     }
 
-    .hero-content {
+    .hero-gridlines {
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 120px 120px;
+      background-position: center;
+      opacity: 0.35;
+    }
+
+    .hero-orbit {
+      width: 560px;
+      height: 560px;
+      right: -120px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.03), 0 0 0 120px rgba(255, 255, 255, 0.02);
+      opacity: 0.9;
+    }
+
+    .hero-orbit::before,
+    .hero-orbit::after {
+      content: "";
+      border-radius: 50%;
+      inset: 60px;
+      border: 1px dashed rgba(255, 255, 255, 0.18);
+      animation: spin 30s linear infinite;
+    }
+
+    .hero-orbit::after {
+      inset: 140px;
+      border-style: solid;
+      border-color: rgba(127, 224, 176, 0.22);
+      animation-direction: reverse;
+      animation-duration: 20s;
+    }
+
+    .hero-shell {
       position: relative;
       z-index: 2;
-      max-width: 600px;
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .hero-content {
+      max-width: 640px;
       text-align: left;
+      padding-top: 1.5rem;
     }
 
     .hero-badge {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
       font-family: 'DM Sans', sans-serif;
       font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 0.08em;
-      color: var(--accent-muted);
-      border: 1px solid var(--border);
-      padding: 8px 16px;
-      margin-bottom: 1.75rem;
+      color: #ebf5f1;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 9px 16px;
+      margin-bottom: 1.5rem;
       text-transform: uppercase;
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
       animation: fadeInDown 0.75s ease forwards;
+    }
+
+    .hero-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #7fe0b0;
+      box-shadow: 0 0 18px rgba(127, 224, 176, 0.7);
     }
 
     .hero-title {
       font-family: 'DM Sans', sans-serif;
       font-weight: 700;
-      font-size: clamp(2.1rem, 5.5vw, 3.35rem);
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
-      letter-spacing: -0.03em;
-      color: var(--heading);
+      font-size: clamp(2.6rem, 6vw, 4.7rem);
+      line-height: 1.02;
+      margin-bottom: 1.15rem;
+      letter-spacing: -0.05em;
+      color: #ffffff;
       animation: fadeInUp 0.85s ease 0.1s both;
     }
 
-    .hero-title .line1 {
+    .hero-title span {
       display: block;
-      color: #ffffff;
     }
 
-    .hero-title .line2 {
-      display: block;
-      color: #ffffff;
-      margin-top: 0.15em;
+    .hero-title .accent {
+      color: #cce9de;
     }
 
     .hero-sub {
-      font-size: 1.125rem;
-      color: var(--surface);
-      max-width: 520px;
-      margin: 0 0 1.5rem;
-      line-height: 1.65;
+      font-size: 1.08rem;
+      color: rgba(255, 255, 255, 0.84);
+      max-width: 560px;
+      margin: 0 0 1.35rem;
+      line-height: 1.75;
       animation: fadeInUp 0.85s ease 0.2s both;
     }
 
-    .hero-tagline {
-      font-size: 0.9rem;
-      color: var(--surface);
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
       margin-bottom: 2rem;
       animation: fadeInUp 0.85s ease 0.28s both;
+    }
+
+    .hero-chip {
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.88);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      backdrop-filter: blur(8px);
     }
 
     .hero-ctas {
@@ -101,160 +193,676 @@
     }
 
     .hero-stats {
-      display: flex;
-      gap: 2.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 3.5rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2.6rem;
       animation: fadeInUp 0.85s ease 0.42s both;
     }
 
     .stat {
-      text-align: center;
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      backdrop-filter: blur(10px);
     }
 
     .stat-num {
       font-family: 'DM Sans', sans-serif;
-      font-size: 1.85rem;
+      font-size: 1.4rem;
       font-weight: 700;
-      color: var(--accent);
+      color: #ffffff;
       display: block;
-      line-height: 1.2;
+      line-height: 1.1;
     }
 
     .stat-label {
-      font-size: 0.75rem;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.72);
+      margin-top: 0.45rem;
+      line-height: 1.45;
+    }
+
+    .hero-panel {
+      display: grid;
+      gap: 1rem;
+      animation: fadeInUp 0.9s ease 0.3s both;
+      align-content: start;
+    }
+
+    .hero-card {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 1.4rem;
+      border-radius: 24px;
+      background: rgba(250, 248, 242, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: auto auto 0 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--secondary));
+    }
+
+    .hero-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 72px rgba(0, 0, 0, 0.22);
+      border-color: rgba(255, 255, 255, 0.42);
+    }
+
+    .hero-panel-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      color: var(--accent-muted);
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+      display: block;
+    }
+
+    .hero-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.35rem;
+      line-height: 1.2;
+      color: var(--heading);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-card p {
       color: var(--text-dim);
-      margin-top: 0.35rem;
-      max-width: 140px;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .proof-item {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 0.85rem;
+      align-items: start;
+      padding: 0.9rem;
+      border-radius: 16px;
+      background: rgba(30, 92, 74, 0.06);
+      border: 1px solid rgba(30, 92, 74, 0.12);
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .proof-item:hover {
+      transform: translateX(4px);
+      background: rgba(30, 92, 74, 0.09);
+      border-color: rgba(30, 92, 74, 0.24);
+    }
+
+    .proof-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+      color: var(--accent);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .proof-item strong,
+    .mini-card strong {
+      display: block;
+      color: var(--heading);
+      font-family: 'DM Sans', sans-serif;
+      margin-bottom: 0.2rem;
+    }
+
+    .proof-item span,
+    .mini-card span {
+      color: var(--text-dim);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .hero-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .mini-card {
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--border);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .mini-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-bright);
+    }
+
+    .trust-strip {
+      position: relative;
+      z-index: 1;
+      padding: 28px 5% 36px;
+      margin-top: 0;
+    }
+
+    .trust-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .trust-inner::before {
+      content: "";
+      position: absolute;
+      inset: auto -10% -60% auto;
+      width: 320px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(30, 92, 74, 0.12), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-shell > * {
+      min-width: 0;
+    }
+
+    .trust-inner > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .trust-copy {
+      color: var(--text-dim);
+      font-size: 0.92rem;
+      max-width: 520px;
+    }
+
+    .trust-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      justify-content: flex-end;
+      margin-left: auto;
+    }
+
+    .trust-tag {
+      padding: 0.55rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--heading);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .intro-strip,
+    .capability-section,
+    .process-strip,
+    .cta-band {
+      position: relative;
+      z-index: 1;
+      padding: 88px 5%;
     }
 
     .intro-strip {
-      position: relative;
-      z-index: 1;
-      padding: 72px 5%;
+      background:
+        linear-gradient(180deg, rgba(232, 228, 219, 0.28) 0%, rgba(255, 255, 255, 0.95) 100%);
       border-top: 1px solid var(--border);
-      background: var(--surface);
+    }
+
+    .intro-grid,
+    .capability-inner,
+    .process-inner,
+    .cta-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
     }
 
     .intro-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      max-width: 1080px;
-      margin: 0 auto;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.95fr);
+      gap: 3rem;
+      align-items: start;
     }
 
-    .intro-label {
+    .intro-label,
+    .section-label {
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       color: var(--accent-muted);
       text-transform: uppercase;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.9rem;
       display: block;
     }
 
-    .intro-heading {
+    .intro-heading,
+    .section-heading,
+    .cta-band h2 {
       font-family: 'DM Sans', sans-serif;
       font-weight: 700;
-      font-size: clamp(1.45rem, 3vw, 1.85rem);
+      font-size: clamp(1.8rem, 4vw, 3rem);
       color: var(--heading);
-      line-height: 1.3;
-      margin-bottom: 1.25rem;
+      line-height: 1.1;
+      margin-bottom: 1.1rem;
+      letter-spacing: -0.04em;
     }
 
-    .intro-heading span {
+    .intro-heading span,
+    .section-heading span,
+    .cta-band h2 span {
       color: var(--accent);
     }
 
-    .intro-body {
-      font-size: 0.98rem;
+    .intro-body,
+    .section-copy,
+    .cta-band p {
+      font-size: 1rem;
       color: var(--text-dim);
       line-height: 1.8;
     }
 
-    .intro-services {
+    .intro-actions {
       display: flex;
-      flex-direction: column;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+
+    .intro-stack {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .spotlight-card {
+      padding: 1.5rem;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(232, 228, 219, 0.48));
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .spotlight-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-bright);
+    }
+
+    .spotlight-card.primary {
+      background: linear-gradient(135deg, rgba(30, 92, 74, 0.08), rgba(255, 255, 255, 0.94));
+    }
+
+    .spotlight-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.2rem;
+      color: var(--heading);
+      margin-bottom: 0.7rem;
+    }
+
+    .spotlight-card p {
+      color: var(--text-dim);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .spotlight-list {
+      display: grid;
       gap: 0.75rem;
     }
 
-    .intro-service-row {
+    .spotlight-list div {
       display: flex;
-      align-items: center;
+      justify-content: space-between;
       gap: 1rem;
-      padding: 1rem 1.15rem;
-      border: 1px solid var(--border);
-      background: var(--bg);
-      transition: border-color 0.25s, box-shadow 0.25s;
-      text-decoration: none;
-      border-radius: 4px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(220, 214, 203, 0.75);
+      color: var(--text);
     }
 
-    .intro-service-row:hover {
-      border-color: var(--border-bright);
-      box-shadow: var(--shadow-sm);
+    .spotlight-list div:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
     }
 
-    .intro-service-row .icon {
-      font-size: 1.35rem;
-      flex-shrink: 0;
-    }
-
-    .intro-service-row .svc-name {
+    .spotlight-list strong {
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
       color: var(--heading);
     }
 
-    .intro-service-row .svc-sub {
-      font-size: 0.72rem;
+    .capability-section {
+      background:
+        radial-gradient(circle at top right, rgba(30, 92, 74, 0.08), transparent 24%),
+        var(--surface);
+      border-top: 1px solid var(--border);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .section-copy {
+      max-width: 560px;
+      padding-top: 0.35rem;
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .bento-card {
+      padding: 1.5rem;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(232, 228, 219, 0.3));
+      box-shadow: var(--shadow-sm);
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .bento-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 46px rgba(0, 0, 0, 0.1);
+      border-color: var(--border-bright);
+    }
+
+    .bento-card.featured {
+      grid-column: span 7;
+      background:
+        radial-gradient(circle at top right, rgba(30, 92, 74, 0.12), transparent 36%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(232, 228, 219, 0.52));
+    }
+
+    .bento-card.tall {
+      grid-column: span 5;
+    }
+
+    .bento-card.wide {
+      grid-column: span 4;
+    }
+
+    .bento-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.2rem;
+      color: var(--heading);
+      margin-bottom: 0.65rem;
+    }
+
+    .bento-card p {
       color: var(--text-dim);
+      line-height: 1.7;
     }
 
-    .intro-service-row .arrow {
-      margin-left: auto;
-      color: var(--accent);
-      font-size: 1rem;
-      opacity: 0;
-      transition: opacity 0.25s;
+    .bento-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
     }
 
-    .intro-service-row:hover .arrow {
-      opacity: 1;
+    .bento-card li {
+      padding-left: 1rem;
+      position: relative;
+      color: var(--text);
+    }
+
+    .bento-card li::before {
+      content: "";
+      position: absolute;
+      top: 0.58rem;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .bento-topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-start;
+      color: var(--accent-muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .metric-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .metric-pill {
+      padding: 0.5rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(30, 92, 74, 0.08);
+      color: var(--accent-hover);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 600;
+    }
+
+    .process-strip {
+      border-top: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(232, 228, 219, 0.34), rgba(255, 255, 255, 0.98));
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .process-card {
+      padding: 1.5rem;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .process-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-bright);
+    }
+
+    .system-visual {
+      position: relative;
+      margin-top: 1.15rem;
+      min-height: 184px;
+      border-radius: 18px;
+      padding: 1rem;
+      background:
+        radial-gradient(circle at top left, rgba(30, 92, 74, 0.12), transparent 32%),
+        linear-gradient(180deg, rgba(30, 92, 74, 0.04), rgba(255, 255, 255, 0.9));
+      border: 1px solid rgba(30, 92, 74, 0.12);
+      overflow: hidden;
+    }
+
+    .system-visual > * {
+      position: absolute;
+      z-index: 1;
+    }
+
+    .system-line {
+      left: 18%;
+      right: 18%;
+      top: 50%;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(30, 92, 74, 0.16), rgba(30, 92, 74, 0.5), rgba(139, 77, 31, 0.26));
+    }
+
+    .system-line::before,
+    .system-line::after {
+      content: "";
+      position: absolute;
+      top: -4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px rgba(30, 92, 74, 0.08);
+      animation: dot-blink 2.6s ease-in-out infinite;
+    }
+
+    .system-line::before {
+      left: 28%;
+    }
+
+    .system-line::after {
+      right: 18%;
+      animation-delay: 1.1s;
+    }
+
+    .system-node {
+      width: 88px;
+      height: 88px;
+      padding: 0.8rem;
+      border-radius: 22px;
+      display: grid;
+      align-content: end;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(30, 92, 74, 0.14);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--heading);
+      letter-spacing: 0.02em;
+    }
+
+    .system-node small {
+      display: block;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-muted);
+      margin-bottom: 0.18rem;
+    }
+
+    .system-node.device {
+      top: 14px;
+      left: 12px;
+    }
+
+    .system-node.cloud {
+      top: calc(50% - 44px);
+      left: calc(50% - 44px);
+    }
+
+    .system-node.app {
+      right: 12px;
+      bottom: 14px;
+    }
+
+    .signal-tag {
+      padding: 0.35rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(30, 92, 74, 0.12);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-muted);
+    }
+
+    .signal-tag.one {
+      top: 28px;
+      left: 36%;
+    }
+
+    .signal-tag.two {
+      bottom: 22px;
+      right: 32%;
+    }
+
+    .process-number {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--accent-muted);
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+      display: inline-block;
+    }
+
+    .process-card h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.15rem;
+      color: var(--heading);
+      margin-bottom: 0.65rem;
+    }
+
+    .process-card p {
+      color: var(--text-dim);
+      line-height: 1.7;
     }
 
     .cta-band {
-      position: relative;
-      z-index: 1;
-      padding: 72px 5%;
-      text-align: center;
       border-top: 1px solid var(--border);
-      background: linear-gradient(180deg, var(--bg2) 0%, var(--bg) 100%);
+      background:
+        radial-gradient(circle at top left, rgba(30, 92, 74, 0.09), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(232, 228, 219, 0.45));
     }
 
-    .cta-band h2 {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 700;
-      font-size: clamp(1.5rem, 3.2vw, 2.15rem);
-      color: var(--heading);
-      margin-bottom: 0.85rem;
+    .cta-inner {
+      text-align: center;
+      max-width: 760px;
     }
 
     .cta-band p {
-      color: var(--text-dim);
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto 2rem;
     }
 
     .cta-buttons {
@@ -264,27 +872,162 @@
       flex-wrap: wrap;
     }
 
-    /* .background-video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-      z-index: 0;
-    } */
+    .btn-secondary.light {
+      color: var(--heading);
+      background: rgba(255, 255, 255, 0.88);
+      border-color: rgba(255, 255, 255, 0.24);
+    }
 
-    @media (max-width: 768px) {
+    .btn-secondary.light:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.98);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-shell,
       .intro-grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
       }
 
-      .hero-stats {
-        gap: 1.5rem;
+      .hero-content {
+        max-width: 100%;
+        padding-top: 0;
+      }
+
+      .hero-panel {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+      }
+
+      .hero-orbit {
+        right: -180px;
+        width: 500px;
+        height: 500px;
+      }
+
+      .bento-card.featured,
+      .bento-card.tall,
+      .bento-card.wide {
+        grid-column: span 6;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #hero {
+        min-height: auto;
+        padding-top: 108px;
+        padding-bottom: 48px;
+      }
+
+      .hero-title {
+        font-size: clamp(2.3rem, 12vw, 3.35rem);
+      }
+
+      .hero-gridlines,
+      .hero-orbit {
+        display: none;
+      }
+
+      .hero-shell,
+      .hero-panel,
+      .hero-stats,
+      .hero-mini-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-inner,
+      .section-head {
+        align-items: flex-start;
+      }
+
+      .trust-tags {
+        justify-content: flex-start;
+        margin-left: 0;
+      }
+
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bento-card.featured,
+      .bento-card.tall,
+      .bento-card.wide {
+        grid-column: auto;
+      }
+
+      .intro-strip,
+      .capability-section,
+      .process-strip,
+      .cta-band {
+        padding: 72px 5%;
+      }
+
+      .trust-strip {
+        padding-top: 20px;
+      }
+
+      .trust-inner {
+        border-radius: 18px;
+      }
+
+      .proof-item {
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 0.75rem;
+      }
+
+      .proof-icon {
+        width: 40px;
+        height: 40px;
+      }
+
+      .system-visual {
+        min-height: 160px;
+      }
+
+      .system-node {
+        width: 76px;
+        height: 76px;
+        border-radius: 18px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-badge,
+      .hero-chip,
+      .trust-tag,
+      .metric-pill {
+        max-width: 100%;
+      }
+
+      .hero-card,
+      .spotlight-card,
+      .bento-card,
+      .process-card {
+        padding: 1.25rem;
+        border-radius: 20px;
+      }
+
+      .hero-ctas,
+      .intro-actions,
+      .cta-buttons {
+        gap: 0.75rem;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        text-align: center;
+      }
+
+      .system-line {
+        left: 15%;
+        right: 15%;
+      }
+
+      .signal-tag {
+        display: none;
       }
     }
   </style>
@@ -296,7 +1039,7 @@
   <nav style="background-color: transparent;">
     <a class="nav-logo" href="index.html">Logic<span>Mesh</span></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="coming-soon.html">Team</a></li>
@@ -313,97 +1056,316 @@
       <source src="videos/microcontroller_background_video.mp4" type="video/mp4">
     </video>
     <div class="hero-glow"></div>
-    <div class="hero-content">
-      <h1 class="hero-title">
-        <span class="line1">From Concept to </span>
-        <span class="line2">Connected Systems</span>
-      </h1>
-      <p class="hero-sub">We design and ship firmware, cloud integrations, and web and mobile apps for industrial and
-        IoT products — from prototypes to production.</p>
-      <p class="hero-tagline">Embedded systems · Field connectivity · Dashboards &amp; apps</p>
-      <div class="hero-ctas">
-        <a href="services.html" class="btn-primary">View services</a>
-        <a href="contact.html" class="btn-secondary">Get in touch</a>
-      </div>
-      <!--
+    <div class="hero-gridlines"></div>
+    <div class="hero-orbit"></div>
+
+    <div class="hero-shell">
+      <div class="hero-content">
+        <div class="hero-badge">Engineering for connected products</div>
+        <h1 class="hero-title">
+          <span>From embedded hardware</span>
+          <span class="accent">to cloud-ready product experiences</span>
+        </h1>
+        <p class="hero-sub">
+          LogicMesh helps teams ship IoT systems that actually hold together in the real world:
+          firmware, connectivity, dashboards, and mobile or web software designed as one delivery flow.
+        </p>
+
+        <div class="hero-meta">
+          <span class="hero-chip">Embedded systems</span>
+          <span class="hero-chip">Industrial connectivity</span>
+          <span class="hero-chip">Cloud integration</span>
+          <span class="hero-chip">Web and mobile apps</span>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="services.html" class="btn-primary">Explore services</a>
+          <a href="contact.html" class="btn-secondary light">Start a project</a>
+        </div>
+
         <div class="hero-stats">
-          <div class="stat"><span class="stat-num">6</span><span class="stat-label">Core service areas</span></div>
-          <div class="stat"><span class="stat-num">3</span><span class="stat-label">Senior engineers</span></div>
-          <div class="stat"><span class="stat-num">Remote</span><span class="stat-label">Projects worldwide</span></div>
-          <div class="stat"><span class="stat-num">&lt; 4h</span><span class="stat-label">Typical first reply</span></div>
+          <div class="stat">
+            <span class="stat-num">Full stack</span>
+            <span class="stat-label">Firmware, backend APIs, and user-facing software under one team.</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">Production-minded</span>
+            <span class="stat-label">Architectures designed for bring-up, testing, and deployment, not just demos.</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">Fast alignment</span>
+            <span class="stat-label">Technical discovery focused on scope, feasibility, and delivery risks early.</span>
+          </div>
         </div>
       </div>
-      -->
+
+      <div class="hero-panel">
+        <div class="hero-card reveal">
+          <span class="hero-panel-label">What we connect</span>
+          <h3>One engineering stream across device, cloud, and interface layers</h3>
+          <p>
+            Instead of splitting product delivery between multiple vendors, we bridge the hardware-facing and
+            software-facing work so protocols, APIs, and interfaces stay coordinated.
+          </p>
+
+          <div class="proof-list">
+            <div class="proof-item">
+              <div class="proof-icon">01</div>
+              <div>
+                <strong>Embedded and firmware</strong>
+                <span>ESP32, STM32, RTOS workflows, drivers, and field connectivity.</span>
+              </div>
+            </div>
+            <div class="proof-item">
+              <div class="proof-icon">02</div>
+              <div>
+                <strong>Cloud and integration</strong>
+                <span>MQTT, APIs, AWS or Azure services, and operational data pipelines.</span>
+              </div>
+            </div>
+            <div class="proof-item">
+              <div class="proof-icon">03</div>
+              <div>
+                <strong>Applications and dashboards</strong>
+                <span>Operator tools, admin panels, and customer-facing product software.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <span class="hero-panel-label">Delivery focus</span>
+          <div class="system-visual" aria-hidden="true">
+            <div class="system-line"></div>
+            <div class="signal-tag one">telemetry</div>
+            <div class="signal-tag two">dashboards</div>
+            <div class="system-node device">
+              <small>Edge</small>
+              Device
+            </div>
+            <div class="system-node cloud">
+              <small>Cloud</small>
+              Platform
+            </div>
+            <div class="system-node app">
+              <small>App</small>
+              Portal
+            </div>
+          </div>
+          <div class="hero-mini-grid">
+            <div class="mini-card">
+              <strong>Discovery</strong>
+              <span>Clarify scope, protocols, constraints, and rollout risks.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Build</strong>
+              <span>Coordinate firmware, backend, and UI work around one system map.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Bring-up</strong>
+              <span>Validate data flow from device signals to dashboards and actions.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Support</strong>
+              <span>Refine reliability, visibility, and production readiness.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <div class="intro-strip">
+  <section class="trust-strip">
+    <div class="trust-inner reveal">
+      <div class="trust-copy">Built for industrial and connected-product work where firmware, APIs, and interfaces need to move together.</div>
+      <div class="trust-tags">
+        <span class="trust-tag">ESP32</span>
+        <span class="trust-tag">STM32</span>
+        <span class="trust-tag">MQTT</span>
+        <span class="trust-tag">Modbus</span>
+        <span class="trust-tag">React</span>
+        <span class="trust-tag">Flutter</span>
+        <span class="trust-tag">AWS IoT</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro-strip">
     <div class="intro-grid">
       <div class="reveal">
-        <span class="intro-label">About us</span>
-        <h2 class="intro-heading">One team for <span>firmware, cloud, and product software</span></h2>
+        <span class="intro-label">Why teams choose us</span>
+        <h2 class="intro-heading">A practical partner for <span>connected systems that need to ship cleanly</span></h2>
         <p class="intro-body">
-          LogicMesh is an engineering practice focused on connected devices and the systems around them: embedded
-          firmware, industrial protocols, cloud backends, and the web and mobile apps your customers use.<br /><br />
-          We work with you from architecture through delivery — so sensors, gateways, APIs, and UIs stay aligned instead
-          of drifting apart across vendors.
+          LogicMesh focuses on the messy middle that slows many product teams down: device communication,
+          backend coordination, data visibility, and the product interfaces that make everything usable.
+          We work across those layers so the delivered system feels coherent rather than stitched together.
         </p>
-        <br />
-        <a href="why.html" class="btn-primary" style="margin-top:0.5rem">Why work with us</a>
+        <div class="intro-actions">
+          <a href="why.html" class="btn-primary">Why work with us</a>
+          <a href="portfolio.html" class="btn-secondary" style="color: var(--heading);">See recent work</a>
+        </div>
       </div>
-      <div class="intro-services reveal">
-        <a href="services.html#iot" class="intro-service-row">
-          <span class="icon">⚡</span>
-          <div>
-            <div class="svc-name">IoT firmware</div>
-            <div class="svc-sub">ESP32, STM32, FreeRTOS</div>
-          </div>
-          <span class="arrow">→</span>
-        </a>
-        <a href="services.html#industrial" class="intro-service-row">
-          <span class="icon">🏭</span>
-          <div>
-            <div class="svc-name">Industrial automation</div>
-            <div class="svc-sub">Modbus, RS-485, control</div>
-          </div>
-          <span class="arrow">→</span>
-        </a>
-        <a href="services.html#cloud" class="intro-service-row">
-          <span class="icon">☁️</span>
-          <div>
-            <div class="svc-name">Cloud integration</div>
-            <div class="svc-sub">AWS IoT, Azure, MQTT</div>
-          </div>
-          <span class="arrow">→</span>
-        </a>
-        <a href="services.html#web" class="intro-service-row">
-          <span class="icon">🌐</span>
-          <div>
-            <div class="svc-name">Web &amp; mobile</div>
-            <div class="svc-sub">.NET, React, Flutter</div>
-          </div>
-          <span class="arrow">→</span>
-        </a>
-        <a href="services.html#pcb" class="intro-service-row">
-          <span class="icon">🔌</span>
-          <div>
-            <div class="svc-name">PCB design</div>
-            <div class="svc-sub">KiCad, layout &amp; bring-up</div>
-          </div>
-          <span class="arrow">→</span>
-        </a>
-      </div>
-    </div>
-  </div>
 
-  <div class="cta-band">
-    <h2 class="reveal">Have a product or integration in mind?</h2>
-    <p class="reveal">Tell us what you’re building. We usually respond within a few hours and can schedule a short
-      discovery call to align on scope and timeline.</p>
-    <div class="cta-buttons reveal">
-      <a href="coming-soon.html" class="btn-primary">Start a conversation</a>
-      <a href="portfolio.html" class="btn-secondary" style="color: var(--accent);">See our work</a>
+      <div class="intro-stack reveal">
+        <div class="spotlight-card primary">
+          <span class="intro-label">Typical engagement</span>
+          <h3>From architecture through delivery</h3>
+          <p>
+            We can support early product definition, firmware and board bring-up, cloud integration,
+            and the web or mobile layer without handing off critical context every few weeks.
+          </p>
+          <div class="metric-row">
+            <span class="metric-pill">Prototype to production</span>
+            <span class="metric-pill">System-level ownership</span>
+            <span class="metric-pill">Cross-discipline execution</span>
+          </div>
+        </div>
+
+        <div class="spotlight-card">
+          <span class="intro-label">Best fit</span>
+          <div class="spotlight-list">
+            <div><strong>Industrial workflows</strong><span>Monitoring, control, and device communications</span></div>
+            <div><strong>IoT products</strong><span>Connected sensors, gateways, and operator dashboards</span></div>
+            <div><strong>Product software</strong><span>Companion apps, portals, and device management tools</span></div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section class="capability-section">
+    <div class="capability-inner">
+      <div class="section-head reveal">
+        <div>
+          <span class="section-label">Capabilities</span>
+          <h2 class="section-heading">The right depth for <span>hardware-linked digital products</span></h2>
+        </div>
+        <p class="section-copy">
+          The page design is intentionally richer here, but still grounded in your existing brand palette and structure.
+          The main upgrade is stronger grouping and visual hierarchy rather than decorative excess.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+        <article class="bento-card featured reveal">
+          <div>
+            <div class="bento-topline">
+              <span>IoT and embedded</span>
+              <span>Core delivery</span>
+            </div>
+            <h3>Firmware and device behavior designed with the rest of the product in mind</h3>
+            <p>
+              We build the low-level and connected layers together so data formats, transport choices,
+              and field constraints do not become late-stage surprises for backend or app teams.
+            </p>
+          </div>
+          <ul>
+            <li>MCU firmware, drivers, task scheduling, and communication stacks</li>
+            <li>Industrial protocols and gateway-oriented device communication</li>
+            <li>Validation paths for telemetry, command flow, and system feedback</li>
+          </ul>
+        </article>
+
+        <article class="bento-card tall reveal">
+          <div>
+            <div class="bento-topline">
+              <span>Cloud and APIs</span>
+              <span>Integration</span>
+            </div>
+            <h3>Backend systems that keep devices, users, and operations aligned</h3>
+            <p>
+              Event ingestion, device messaging, platform integrations, and admin tooling shaped around operational clarity.
+            </p>
+          </div>
+          <div class="metric-row">
+            <span class="metric-pill">AWS IoT</span>
+            <span class="metric-pill">Azure services</span>
+            <span class="metric-pill">Secure APIs</span>
+          </div>
+        </article>
+
+        <article class="bento-card wide reveal">
+          <div>
+            <div class="bento-topline">
+              <span>Web and mobile</span>
+              <span>Experience</span>
+            </div>
+            <h3>Tools that turn technical systems into usable products</h3>
+            <p>Dashboards, portals, and mobile experiences for operators, teams, and customers.</p>
+          </div>
+        </article>
+
+        <article class="bento-card wide reveal">
+          <div>
+            <div class="bento-topline">
+              <span>Electronics</span>
+              <span>Bring-up</span>
+            </div>
+            <h3>PCB support that matches the software path</h3>
+            <p>Layout-aware thinking, board bring-up support, and closer feedback loops between hardware and firmware.</p>
+          </div>
+        </article>
+
+        <article class="bento-card wide reveal">
+          <div>
+            <div class="bento-topline">
+              <span>Scale-up support</span>
+              <span>Operations</span>
+            </div>
+            <h3>Visibility for what happens after launch</h3>
+            <p>Monitoring, maintenance workflows, and improvements based on live usage and field behavior.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="process-strip">
+    <div class="process-inner">
+      <div class="section-head reveal">
+        <div>
+          <span class="section-label">How we work</span>
+          <h2 class="section-heading">A delivery rhythm that keeps <span>technical risk visible early</span></h2>
+        </div>
+        <p class="section-copy">
+          Current B2B tech sites are leaning into clearer storytelling and stronger section framing. This keeps that
+          feel while staying professional and restrained.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-card reveal">
+          <span class="process-number">01 Discover</span>
+          <h3>Frame the system, not just the feature list</h3>
+          <p>We define how devices, protocols, cloud services, and user interfaces need to interact before build decisions harden.</p>
+        </article>
+        <article class="process-card reveal">
+          <span class="process-number">02 Build</span>
+          <h3>Coordinate implementation across layers</h3>
+          <p>Firmware, backend, and application work are developed with shared assumptions around data flow and field use.</p>
+        </article>
+        <article class="process-card reveal">
+          <span class="process-number">03 Refine</span>
+          <h3>Improve usability and production readiness</h3>
+          <p>We tune reliability, telemetry visibility, and operator experience so the product is stronger beyond the initial launch.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="cta-inner">
+      <h2 class="reveal">Have a device, platform, or integration idea <span>you want to shape properly?</span></h2>
+      <p class="reveal">
+        Share what you are building and where the complexity sits. We can help align firmware, cloud,
+        and application scope into a practical next step.
+      </p>
+      <div class="cta-buttons reveal">
+        <a href="contact.html" class="btn-primary">Start a conversation</a>
+        <a href="services.html" class="btn-secondary" style="color: var(--heading);">Review services</a>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <div class="footer-inner">
@@ -411,7 +1373,6 @@
         <div class="footer-logo">Logic<span>Mesh</span> Solutions</div>
         <div class="footer-tagline">Embedded &amp; cloud engineering from Karachi</div>
 
-        <!-- Contact Info (uses existing styles) -->
         <div class="footer-links">
           <div>Email: <a href="mailto:contact@logicmeshsolutions.com">contact@logicmeshsolutions.com</a></div>
           <hr>
@@ -430,9 +1391,10 @@
     </div>
 
     <div class="footer-bottom">
-      <p>© 2026 <span>LogicMesh Solutions</span> · Karachi, Pakistan · All rights reserved.</p>
+      <p>&copy; 2026 <span>LogicMesh Solutions</span> - Karachi, Pakistan - All rights reserved.</p>
     </div>
   </footer>
+
   <script src="js/main.js"></script>
 </body>
 

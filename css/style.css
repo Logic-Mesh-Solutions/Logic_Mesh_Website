@@ -81,21 +81,12 @@ nav {
   box-shadow: var(--shadow-sm);
 }
 .nav-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 1.12rem;
   color: var(--bg);
   letter-spacing: -0.02em;
   text-decoration: none;
-}
-.nav-logo img {
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
-  flex-shrink: 0;
 }
 .nav-logo span {
   color: var(--accent);
@@ -357,19 +348,10 @@ footer {
   margin-bottom: 2rem;
 }
 .footer-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
   font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 1.05rem;
   color: var(--heading);
-}
-.footer-logo img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  flex-shrink: 0;
 }
 .footer-logo span {
   color: var(--accent);

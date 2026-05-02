@@ -5,6 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Portfolio LogicMesh: IOT, AI, Embedded, ML, Web, App, Hardware and Firmware</title>
 <link rel="icon" href="images/LogicMesh_Logo_icon.png">
+<style>
+html { scrollbar-gutter: stable; }
+body { margin: 0; background: #fff; }
+body.splash-active { overflow: hidden; }
+body.splash-active > :not(.splash-loader) { visibility: hidden; }
+body.splash-active.splash-revealing > :not(.splash-loader) { visibility: visible; animation: page-reveal 0.42s ease-out both; }
+.splash-loader { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; padding: 24px; background: #fff; visibility: visible; opacity: 1; transition: opacity 0.42s ease-in-out, transform 0.42s ease-in-out, visibility 0.42s ease-in-out; }
+.splash-loader.hide, .splash-loader.is-hiding { opacity: 0; transform: scale(0.98); visibility: hidden; pointer-events: none; }
+.splash-loader__inner { display: grid; justify-items: center; gap: 18px; text-align: center; }
+.splash-loader__mark { position: relative; width: clamp(110px, 18vw, 150px); height: clamp(110px, 18vw, 150px); display: grid; place-items: center; }
+.splash-loader__mark::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 3px solid rgba(30, 92, 74, 0.18); border-top-color: #1e5c4a; border-right-color: rgba(139, 77, 31, 0.72); animation: splash-critical-spin 1.65s ease-in-out infinite; }
+.splash-loader__logo { width: clamp(76px, 14vw, 116px); height: clamp(76px, 14vw, 116px); object-fit: contain; }
+@keyframes splash-critical-spin { to { transform: rotate(360deg); } }
+@keyframes page-reveal { from { opacity: 0.94; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .splash-loader, .splash-loader.is-hiding { transition: opacity 0.2s ease; transform: none; } .splash-loader__mark::before { animation: none; } }
+</style>
 <link rel="stylesheet" href="css/style.css"/>
 <style>
 .filter-bar {
@@ -78,7 +94,16 @@
 }
 </style>
 </head>
-<body>
+<body class="splash-active" aria-busy="true">
+<div class="splash-loader" id="splashLoader" role="status" aria-live="polite" aria-label="Loading LogicMesh Solutions">
+  <div class="splash-loader__inner">
+    <div class="splash-loader__mark" aria-hidden="true">
+      <img class="splash-loader__logo" src="images/LogicMesh_Logo_icon.png" alt="" width="116" height="116">
+    </div>
+    <div class="splash-loader__text">LogicMesh Solutions</div>
+    <div class="splash-loader__progress" aria-hidden="true"><span></span></div>
+  </div>
+</div>
 <div class="grid-bg"></div>
 <nav style="background-color: var(--heading);">
   <a class="nav-logo" href="index.html">Logic<span>Mesh</span></a>

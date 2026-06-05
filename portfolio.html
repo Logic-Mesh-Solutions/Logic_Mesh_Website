@@ -52,6 +52,12 @@ body.splash-active.splash-revealing > :not(.splash-loader) { visibility: visible
   font-size:3.5rem;position:relative;overflow:hidden;
   background:var(--bg2);
 }
+.p-img img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
 .p-img::after {
   content:'';position:absolute;inset:0;
   background:linear-gradient(180deg,transparent 50%,var(--bg) 100%);
@@ -147,6 +153,18 @@ body.splash-active.splash-revealing > :not(.splash-loader) { visibility: visible
 
   <div class="portfolio-grid" id="projectGrid">
 
+    <div class="p-card reveal" data-category="pcb firmware iot">
+      <div class="p-img">
+        <img src="images/portfolio/PCB_Design_for_ESP32-Based_Smart_Device.png" alt="PCB design for ESP32-based smart device">
+      </div>
+      <div class="p-body">
+        <span class="p-cat">PCB Design · ESP32 · IoT</span>
+        <h3 class="p-title">PCB Design for ESP32-Based Smart Device</h3>
+        <p class="p-desc">Production-ready ESP32 PCB with USB-C charging, TP4056 battery management, GC9D01 TFT display, SD card interface, tactile buttons, and JTAG programming.</p>
+        <div class="tech-tags"><span class="tech-tag">KiCad</span><span class="tech-tag">ESP32</span><span class="tech-tag">Multilayer PCB</span><span class="tech-tag">USB-C</span><span class="tech-tag">JLCPCB</span></div>
+      </div>
+    </div>
+
     <div class="p-card reveal" data-category="firmware pcb">
       <div class="p-img bg-a">🔌</div>
       <div class="p-body">
@@ -182,8 +200,8 @@ body.splash-active.splash-revealing > :not(.splash-loader) { visibility: visible
       <div class="p-body">
         <span class="p-cat">Energy · IoT</span>
         <h3 class="p-title">Three-Phase Energy Monitoring System</h3>
-        <p class="p-desc">Real-time monitoring of voltage, current, power factor, and kWh per circuit. MQTT data pipeline with Grafana dashboard and automated alert management.</p>
-        <div class="tech-tags"><span class="tech-tag">ESP32</span><span class="tech-tag">MQTT</span><span class="tech-tag">Grafana</span><span class="tech-tag">RS-485</span><span class="tech-tag">InfluxDB</span></div>
+        <p class="p-desc">Real-time monitoring of voltage, current, power factor, and kWh per circuit. MQTT and automated alert management.</p>
+        <div class="tech-tags"><span class="tech-tag">ATSAM</span><span class="tech-tag">MQTT</span><span class="tech-tag">Web Dashboard</span></div>
       </div>
     </div>
 
@@ -232,7 +250,7 @@ body.splash-active.splash-revealing > :not(.splash-loader) { visibility: visible
       <div class="p-body">
         <span class="p-cat">PCB · KiCad</span>
         <h3 class="p-title">Complex PCB Layout for IoT Applications</h3>
-        <p class="p-desc">Multi-layer PCB design incorporating ESP32-WROOM-32, power management, RS-485 transceiver, and USB-C charging. Gerber files ready for production.</p>
+        <p class="p-desc">Multi-layer PCB design incorporating ESP32-WROOM-32, power management, and USB-C charging. Gerber files ready for production.</p>
         <div class="tech-tags"><span class="tech-tag">KiCad</span><span class="tech-tag">ESP32</span><span class="tech-tag">RS-485</span><span class="tech-tag">USB-C</span><span class="tech-tag">DFM</span></div>
       </div>
     </div>
@@ -274,6 +292,29 @@ body.splash-active.splash-revealing > :not(.splash-loader) { visibility: visible
   <!-- Featured Case Study -->
   <div style="margin-top:4rem">
     <p class="eyebrow reveal" style="text-align:center;margin-bottom:2rem;">Case study</p>
+    <div class="case-study reveal">
+      <span class="eyebrow green">PCB design and embedded systems</span>
+      <h3 class="case-title">PCB Design for ESP32-Based Smart Device</h3>
+      <div class="case-grid">
+        <div class="case-body">
+          <p><strong style="color:var(--heading)">Role:</strong> PCB Designer and Embedded Systems Engineer.</p>
+          <p>Designed and delivered a high-performance ESP32 PCB optimized for IoT devices, wearables, and embedded electronics. The board integrates USB-C charging, TP4056 battery management, GC9D01 TFT display support, SD card interface, tactile buttons, and JTAG programming.</p>
+          <p>Delivered complete schematics, PCB layout, BOM, and pick-and-place files with DRC/ERC verification for JLCPCB assembly. The work also covered component footprint corrections, CP2102 USB-UART integration, and GitHub version control for a compact, production-ready SMD design.</p>
+          <p>The client rated the collaboration <strong style="color:var(--success)">5.0 out of 5</strong> and said, "Very cooperative and helped develop the PCB during my busy phase. Appreciated his professionalism and recommend him to anyone."</p>
+          <div class="tech-tags" style="margin-top:1.5rem">
+            <span class="tech-tag">KiCad</span><span class="tech-tag">ESP32</span><span class="tech-tag">PCB Design</span>
+            <span class="tech-tag">Multilayer PCB</span><span class="tech-tag">Embedded System</span><span class="tech-tag">JLCPCB Assembly</span>
+          </div>
+        </div>
+        <div class="case-meta">
+          <div class="meta-item"><span class="meta-label">Role</span><span class="meta-value">PCB Designer</span></div>
+          <div class="meta-item"><span class="meta-label">Platform</span><span class="meta-value">ESP32</span></div>
+          <div class="meta-item"><span class="meta-label">Rating</span><span class="meta-value" style="color:var(--success)">5.0 out of 5</span></div>
+          <div class="meta-item"><span class="meta-label">Deliverables</span><span class="meta-value">Schematics, PCB, BOM, PnP</span></div>
+        </div>
+      </div>
+    </div>
+
     <div class="case-study reveal">
       <span class="eyebrow green">Production deployment</span>
       <h3 class="case-title">ESP32-S3 Smart Device — Full Stack IoT System</h3>

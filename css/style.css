@@ -181,6 +181,22 @@ nav {
 .nav-logo span {
   color: var(--accent);
 }
+
+/* Full company name, with the legal suffix on a readable second line. */
+.nav-logo { display:inline-flex;align-items:center;gap:.65rem;flex-shrink:0; }
+.nav-logo .brand-wordmark { color:var(--bg);line-height:1.2; }
+.brand-legal { display:block;font-size:.65em;font-weight:400;letter-spacing:.015em;line-height:1.5; }
+.nav-logo .brand-legal { color:var(--bg); }
+.footer-logo .brand-legal { margin-top:.2rem; }
+@media(max-width:1100px) and (min-width:769px) {
+  nav .nav-links { gap:.85rem; }
+  nav .nav-links a { font-size:.88rem; }
+  nav .nav-socials { display:none; }
+}
+@media(max-width:400px) {
+  .nav-logo { font-size:.95rem;gap:.4rem; }
+  .nav-logo img { width:30px;height:30px; }
+}
 .nav-links {
   display: flex;
   gap: 1.75rem;

@@ -1,0 +1,21 @@
+.project-section [hidden] { display:none !important; }
+.project-filters { display:flex;flex-wrap:wrap;gap:.5rem;margin:1.8rem 0 1.3rem; }
+.project-filters button { font:500 .82rem 'DM Sans',sans-serif;padding:.65rem 1rem;border:1px solid var(--border);border-radius:999px;background:white;color:var(--text);cursor:pointer;min-height:44px; }
+.project-filters button:hover { border-color:var(--accent); }
+.project-filters button[aria-pressed="true"] { background:var(--accent);border-color:var(--accent);color:white; }
+.project-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;align-items:start;margin-top:1.3rem; }
+.project-card { min-width:0;background:white;border:1px solid var(--border);border-radius:12px;padding:1.3rem; }
+.project-card:hover { border-color:var(--accent-muted); }
+.project-category { display:block;font:600 .66rem 'DM Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem; }
+.team-page .project-card h3 { font-size:1rem;line-height:1.45;letter-spacing:-.015em;margin:0 0 .8rem; }
+.project-card summary { cursor:pointer;color:var(--accent);font-size:.85rem;padding:.4rem 0;min-height:32px; }
+.project-card details p { font-size:.88rem;line-height:1.7;margin:.8rem 0; }
+.project-card .tech-tags { gap:.35rem;margin-top:.8rem; }
+.project-card .tech-tag { font-size:.65rem; }
+.project-thumbnail { margin-top:.8rem; }
+.project-thumbnail img { width:100%;height:150px;object-fit:contain;border-radius:6px;background:var(--bg2); }
+.project-pagination { display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1.5rem; }
+.project-pagination p { font-size:.85rem; }
+.project-pagination button { cursor:pointer;min-height:44px; }
+@media(max-width:1000px) { .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:600px) { .project-grid { grid-template-columns:1fr; } .project-section .section-intro { display:block; } .project-pagination { align-items:flex-start;flex-direction:column; } }

@@ -20,7 +20,7 @@
     .splash-loader.hide, .splash-loader.is-hiding { opacity: 0; transform: scale(0.98); visibility: hidden; pointer-events: none; }
     .splash-loader__inner { display: grid; justify-items: center; gap: 18px; text-align: center; }
     .splash-loader__mark { position: relative; width: clamp(110px, 18vw, 150px); height: clamp(110px, 18vw, 150px); display: grid; place-items: center; }
-    .splash-loader__mark::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 3px solid rgba(30, 92, 74, 0.18); border-top-color: #1e5c4a; border-right-color: rgba(139, 77, 31, 0.72); animation: splash-critical-spin 1.65s ease-in-out infinite; }
+    .splash-loader__mark::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 3px solid rgba(8, 110, 131, 0.18); border-top-color: #086e83; border-right-color: rgba(118, 61, 169, 0.72); animation: splash-critical-spin 1.65s ease-in-out infinite; }
     .splash-loader__logo { width: clamp(76px, 14vw, 116px); height: clamp(76px, 14vw, 116px); object-fit: contain; }
     @keyframes splash-critical-spin { to { transform: rotate(360deg); } }
     @keyframes page-reveal { from { opacity: 0.94; } to { opacity: 1; } }
@@ -37,8 +37,8 @@
       overflow: hidden;
       isolation: isolate;
       background:
-        radial-gradient(circle at top right, rgba(30, 92, 74, 0.22), transparent 32%),
-        linear-gradient(135deg, rgba(8, 18, 16, 0.92), rgba(20, 34, 30, 0.74));
+        radial-gradient(circle at top right, rgba(8, 110, 131, 0.22), transparent 32%),
+        linear-gradient(135deg, rgba(17, 28, 50, 0.92), rgba(24, 36, 62, 0.74));
     }
 
     #hero::before {
@@ -57,7 +57,7 @@
       inset: 0;
       background:
         linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.56)),
-        radial-gradient(circle at 72% 50%, rgba(30, 92, 74, 0.24), transparent 28%);
+        radial-gradient(circle at 72% 50%, rgba(8, 110, 131, 0.24), transparent 28%);
       z-index: 1;
       pointer-events: none;
     }
@@ -105,7 +105,7 @@
     .hero-orbit::after {
       inset: 140px;
       border-style: solid;
-      border-color: rgba(127, 224, 176, 0.22);
+      border-color: rgba(114, 222, 237, 0.22);
       animation-direction: reverse;
       animation-duration: 20s;
     }
@@ -135,7 +135,7 @@
       font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 0.08em;
-      color: #ebf5f1;
+      color: #ebf3fc;
       border: 1px solid rgba(255, 255, 255, 0.18);
       padding: 9px 16px;
       margin-bottom: 1.5rem;
@@ -151,8 +151,8 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: #7fe0b0;
-      box-shadow: 0 0 18px rgba(127, 224, 176, 0.7);
+      background: #72deed;
+      box-shadow: 0 0 18px rgba(114, 222, 237, 0.7);
     }
 
     .hero-title {
@@ -171,7 +171,7 @@
     }
 
     .hero-title .accent {
-      color: #cce9de;
+      color: #bddfea;
     }
 
     .hero-sub {
@@ -342,7 +342,7 @@
       overflow: hidden;
       padding: 1.4rem;
       border-radius: 24px;
-      background: rgba(250, 248, 242, 0.94);
+      background: rgba(247, 249, 252, 0.94);
       border: 1px solid rgba(255, 255, 255, 0.28);
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
       transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
@@ -400,15 +400,15 @@
       align-items: start;
       padding: 0.9rem;
       border-radius: 16px;
-      background: rgba(30, 92, 74, 0.06);
-      border: 1px solid rgba(30, 92, 74, 0.12);
+      background: rgba(8, 110, 131, 0.06);
+      border: 1px solid rgba(8, 110, 131, 0.12);
       transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
     }
 
     .proof-item:hover {
       transform: translateX(4px);
-      background: rgba(30, 92, 74, 0.09);
-      border-color: rgba(30, 92, 74, 0.24);
+      background: rgba(8, 110, 131, 0.09);
+      border-color: rgba(8, 110, 131, 0.24);
     }
 
     .proof-icon {
@@ -488,7 +488,7 @@
       inset: auto -10% -60% auto;
       width: 320px;
       height: 220px;
-      background: radial-gradient(circle, rgba(30, 92, 74, 0.12), transparent 70%);
+      background: radial-gradient(circle, rgba(8, 110, 131, 0.12), transparent 70%);
       pointer-events: none;
       z-index: 0;
     }
@@ -623,7 +623,7 @@
     }
 
     .spotlight-card.primary {
-      background: linear-gradient(135deg, rgba(30, 92, 74, 0.08), rgba(255, 255, 255, 0.94));
+      background: linear-gradient(135deg, rgba(8, 110, 131, 0.08), rgba(255, 255, 255, 0.94));
     }
 
     .spotlight-card h3 {
@@ -667,7 +667,7 @@
 
     .capability-section {
       background:
-        radial-gradient(circle at top right, rgba(30, 92, 74, 0.08), transparent 24%),
+        radial-gradient(circle at top right, rgba(8, 110, 131, 0.08), transparent 24%),
         var(--surface);
       border-top: 1px solid var(--border);
     }
@@ -715,7 +715,7 @@
     .bento-card.featured {
       grid-column: span 7;
       background:
-        radial-gradient(circle at top right, rgba(30, 92, 74, 0.12), transparent 36%),
+        radial-gradient(circle at top right, rgba(8, 110, 131, 0.12), transparent 36%),
         linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(232, 228, 219, 0.52));
     }
 
@@ -784,7 +784,7 @@
     .metric-pill {
       padding: 0.5rem 0.75rem;
       border-radius: 999px;
-      background: rgba(30, 92, 74, 0.08);
+      background: rgba(8, 110, 131, 0.08);
       color: var(--accent-hover);
       font-family: 'DM Sans', sans-serif;
       font-size: 0.74rem;
@@ -825,9 +825,9 @@
       border-radius: 18px;
       padding: 1rem;
       background:
-        radial-gradient(circle at top left, rgba(30, 92, 74, 0.12), transparent 32%),
-        linear-gradient(180deg, rgba(30, 92, 74, 0.04), rgba(255, 255, 255, 0.9));
-      border: 1px solid rgba(30, 92, 74, 0.12);
+        radial-gradient(circle at top left, rgba(8, 110, 131, 0.12), transparent 32%),
+        linear-gradient(180deg, rgba(8, 110, 131, 0.04), rgba(255, 255, 255, 0.9));
+      border: 1px solid rgba(8, 110, 131, 0.12);
       overflow: hidden;
     }
 
@@ -841,7 +841,7 @@
       right: 18%;
       top: 50%;
       height: 1px;
-      background: linear-gradient(90deg, rgba(30, 92, 74, 0.16), rgba(30, 92, 74, 0.5), rgba(139, 77, 31, 0.26));
+      background: linear-gradient(90deg, rgba(8, 110, 131, 0.16), rgba(8, 110, 131, 0.5), rgba(118, 61, 169, 0.26));
     }
 
     .system-line::before,
@@ -853,7 +853,7 @@
       height: 8px;
       border-radius: 50%;
       background: var(--accent);
-      box-shadow: 0 0 0 8px rgba(30, 92, 74, 0.08);
+      box-shadow: 0 0 0 8px rgba(8, 110, 131, 0.08);
       animation: dot-blink 2.6s ease-in-out infinite;
     }
 
@@ -874,7 +874,7 @@
       display: grid;
       align-content: end;
       background: rgba(255, 255, 255, 0.94);
-      border: 1px solid rgba(30, 92, 74, 0.14);
+      border: 1px solid rgba(8, 110, 131, 0.14);
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
       font-family: 'DM Sans', sans-serif;
       font-size: 0.74rem;
@@ -911,7 +911,7 @@
       padding: 0.35rem 0.55rem;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(30, 92, 74, 0.12);
+      border: 1px solid rgba(8, 110, 131, 0.12);
       font-family: 'DM Sans', sans-serif;
       font-size: 0.64rem;
       font-weight: 700;
@@ -956,7 +956,7 @@
     .cta-band {
       border-top: 1px solid var(--border);
       background:
-        radial-gradient(circle at top left, rgba(30, 92, 74, 0.09), transparent 28%),
+        radial-gradient(circle at top left, rgba(8, 110, 131, 0.09), transparent 28%),
         linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(232, 228, 219, 0.45));
     }
 
@@ -1142,6 +1142,7 @@
       }
     }
   </style>
+<link rel="stylesheet" href="css/site-theme.css">
 </head>
 
 <body class="splash-active" aria-busy="true">
@@ -1157,7 +1158,7 @@
   <div class="grid-bg"></div>
 
   <nav style="background-color: transparent;">
-    <a class="nav-logo" href="index" aria-label="Logic Mesh Solutions home"><img src="images/LogicMesh_Logo_icon.png" alt="Logic Mesh Solutions logo" width="38" height="38" style="display: block;"><span class="brand-wordmark">Logic <span>Mesh</span> Solutions</span></a>
+    <a class="nav-logo" href="index" aria-label="Logic Mesh Solutions home"><img src="images/LogicMesh_Logo_icon.png" alt="Logic Mesh Solutions logo" width="38" height="38" style="display: block;"><span class="brand-wordmark">Logic <span>Mesh</span> Solutions <small class="brand-legal">(SMC-Private) Limited</small></span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index" class="active">Home</a></li>
       <li><a href="services">Services</a></li>
@@ -1535,7 +1536,7 @@
     <div class="footer-inner">
       <div>
         <div class="footer-logo" style="display: inline-flex; align-items: center; gap: 0.65rem;">
-          <img src="images/LogicMesh_Logo_icon.png" alt="Logic Mesh Solutions logo" width="34" height="34" style="display: block;"><div>Logic <span>Mesh</span> Solutions</div>
+          <img src="images/LogicMesh_Logo_icon.png" alt="Logic Mesh Solutions logo" width="34" height="34" style="display: block;"><div>Logic <span>Mesh</span> Solutions <small class="brand-legal">(SMC-Private) Limited</small></div>
         </div>
         <div class="footer-tagline">Embedded &amp; cloud engineering</div>
 
@@ -1579,7 +1580,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 <span>Logic Mesh Solutions</span> - Karachi, Pakistan - All rights reserved.</p>
+      <p>&copy; 2026 <span>Logic Mesh Solutions (SMC-Private) Limited</span> - Karachi, Pakistan - All rights reserved.</p>
     </div>
   </footer>
 

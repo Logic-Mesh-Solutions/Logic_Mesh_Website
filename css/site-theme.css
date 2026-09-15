@@ -1,0 +1,36 @@
+/* Shared logo palette and component finish, loaded after page-specific styles. */
+:root {
+  --bg:#f7f9fc;--bg2:#edf2f8;--surface:#fff;--card:#fff;
+  --heading:#111c32;--text:#34445d;--text-dim:#52627a;
+  --accent:#086e83;--accent-hover:#075467;--accent-muted:#086e83;
+  --accent-soft:rgba(8,110,131,.07);--secondary:#763da9;
+  --secondary-soft:rgba(118,61,169,.07);--border:#dce3ee;--border-bright:#a8bbd4;
+  --nav-hover:#72deed;--shadow-md:0 12px 32px rgba(24,43,81,.08);
+}
+body { background:var(--bg); }
+nav { border-bottom:1px solid #ffffff16; }
+.nav-logo .brand-wordmark > span,.footer-logo span:not(.brand-legal) { color:#72deed; }
+.nav-links a.active,.nav-links a:hover { color:#72deed; }
+.nav-links a::after { background:#72deed; }
+.btn-primary,.btn-secondary { border-radius:8px;letter-spacing:.015em;text-transform:none;transition-duration:.2s; }
+.btn-primary { background:#153a58;border-color:#153a58;box-shadow:0 5px 14px #153a5818; }
+.btn-primary:hover { background:#095e77;border-color:#095e77;transition-duration:.2s; }
+.btn-secondary:hover { transition-duration:.2s; }
+.page-banner { background:radial-gradient(ellipse at 10% 35%,#1db8cf09,transparent 55%),radial-gradient(ellipse at 95% 40%,#843eb60b,transparent 50%),var(--bg); }
+.banner-line { background:linear-gradient(90deg,#1db8cf,#3659d9,#b833a2); }
+.banner-title span { color:#176680; }
+@supports(background-clip:text) { .banner-title span { background:linear-gradient(100deg,#086e83,#3553a4 75%,#713a96);background-clip:text;color:transparent; } }
+footer { background:#111c32;border-top:1px solid #34435d; }
+.footer-logo,.footer-bottom span { color:#f0f5fc; }
+.footer-tagline,.footer-links,.footer-bottom p { color:#c3cfe2; }
+.footer-links a { color:#dce5f3; }
+.footer-links a:hover { color:#72deed; }
+.footer-bottom { border-color:#34435d; }
+.footer-socials .social-icon { color:#8cdee9;background:#ffffff08;border-color:#52647e; }
+.footer-socials .social-icon:hover { color:#fff;background:#086e83; }
+.team-page .team-cta { background:linear-gradient(115deg,#12253d,#20203c);border:1px solid #34435f; }
+.team-page .team-cta p { color:#d1dced; }
+.team-page .team-cta .eyebrow,.team-page .cta-actions > span { color:#b6cce2; }
+.team-page .team-cta .btn-primary { background:#fff;color:#145775; }
+.team-page .team-cta .btn-primary:hover { background:#e8f5fa; }
+@media(prefers-reduced-motion:reduce) { .btn-primary,.btn-secondary { transition:none; } }

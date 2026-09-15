@@ -17,7 +17,7 @@
     .splash-loader.hide, .splash-loader.is-hiding { opacity: 0; transform: scale(0.98); visibility: hidden; pointer-events: none; }
     .splash-loader__inner { display: grid; justify-items: center; gap: 18px; text-align: center; }
     .splash-loader__mark { position: relative; width: clamp(110px, 18vw, 150px); height: clamp(110px, 18vw, 150px); display: grid; place-items: center; }
-    .splash-loader__mark::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 3px solid rgba(30, 92, 74, 0.18); border-top-color: #1e5c4a; border-right-color: rgba(139, 77, 31, 0.72); animation: splash-critical-spin 1.65s ease-in-out infinite; }
+    .splash-loader__mark::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 3px solid rgba(8, 110, 131, 0.18); border-top-color: #086e83; border-right-color: rgba(118, 61, 169, 0.72); animation: splash-critical-spin 1.65s ease-in-out infinite; }
     .splash-loader__logo { width: clamp(76px, 14vw, 116px); height: clamp(76px, 14vw, 116px); object-fit: contain; }
     @keyframes splash-critical-spin { to { transform: rotate(360deg); } }
     @keyframes page-reveal { from { opacity: 0.94; } to { opacity: 1; } }
@@ -168,7 +168,7 @@
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(30, 92, 74, 0.06), transparent 70%);
+      background: radial-gradient(circle, rgba(8, 110, 131, 0.06), transparent 70%);
       pointer-events: none;
     }
 
@@ -315,6 +315,7 @@
       }
     }
   </style>
+<link rel="stylesheet" href="css/site-theme.css">
 </head>
 
 <body class="splash-active" aria-busy="true">
@@ -329,7 +330,7 @@
   </div>
   <div class="grid-bg"></div>
   <nav style="background-color: var(--heading);">
-    <a class="nav-logo" href="index"><span class="brand-wordmark">Logic <span>Mesh</span> Solutions</span></a>
+    <a class="nav-logo" href="index" aria-label="Logic Mesh Solutions home"><img src="images/LogicMesh_Logo_icon.png" alt="Logic Mesh Solutions logo" width="38" height="38" style="display: block;"><span class="brand-wordmark">Logic <span>Mesh</span> Solutions <small class="brand-legal">(SMC-Private) Limited</small></span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index">Home</a></li>
       <li><a href="services">Services</a></li>
@@ -423,7 +424,9 @@
   <footer>
     <div class="footer-inner">
       <div>
-        <div class="footer-logo">Logic <span>Mesh</span> Solutions</div>
+        <div class="footer-logo" style="display: inline-flex; align-items: center; gap: 0.65rem;">
+          <img src="images/LogicMesh_Logo_icon.png" alt="Logic Mesh Solutions logo" width="34" height="34" style="display: block;"><div>Logic <span>Mesh</span> Solutions <small class="brand-legal">(SMC-Private) Limited</small></div>
+        </div>
         <div class="footer-tagline">Embedded &amp; cloud engineering</div>
 
         <!-- Contact Info (uses existing styles) -->
@@ -450,7 +453,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p>© 2026 <span>Logic Mesh Solutions</span> · Karachi, Pakistan · All rights reserved.</p>
+      <p>© 2026 <span>Logic Mesh Solutions (SMC-Private) Limited</span> · Karachi, Pakistan · All rights reserved.</p>
     </div>
   </footer>
   <script src="js/main.js"></script>

@@ -2,37 +2,37 @@
 
 :root {
   --bg: #ffffff;
-  --bg2: #e8e4db;
+  --bg2: #edf2f8;
   --bg3: #656565;
   --surface: #ffffff;
-  --heading: #1c1b17;
-  --text: #3d3c37;
-  --text-dim: #6e6a62;
-  --accent: #1e5c4a;
-  --accent-hover: #083b2c;
-  --accent-soft: rgba(30, 92, 74, 0.09);
-  --accent-muted: #2a6b56;
-  --secondary: #8b4d1f;
-  --secondary-soft: rgba(139, 77, 31, 0.1);
+  --heading: #111c32;
+  --text: #34445d;
+  --text-dim: #52627a;
+  --accent: #086e83;
+  --accent-hover: #075467;
+  --accent-soft: rgba(8, 110, 131, 0.09);
+  --accent-muted: #086e83;
+  --secondary: #763da9;
+  --secondary-soft: rgba(118, 61, 169, 0.1);
   --success: #2d6a4f;
-  --border: #dcd6cb;
-  --border-bright: #c9c2b5;
+  --border: #dce3ee;
+  --border-bright: #a8bbd4;
   --card: #ffffff;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.08);
-  --nav-hover: #1e9f3d;
+  --nav-hover: #72deed;
   --splash-bg: rgba(255, 255, 255, 0.86);
   --splash-logo-size: clamp(76px, 14vw, 116px);
   --splash-accent: var(--accent);
-  --splash-accent-soft: rgba(30, 92, 74, 0.18);
+  --splash-accent-soft: rgba(8, 110, 131, 0.18);
   --splash-text: var(--heading);
   /* Legacy names (used in inline page styles) */
   --cyan: var(--accent);
   --cyan-dim: var(--accent-muted);
   --cyan-glow: var(--accent-soft);
   --green: var(--secondary);
-  --green-dim: #6b3d18;
-  --purple: #5a4d6e;
+  --green-dim: #763da9;
+  --purple: #71419a;
   --purple-glow: rgba(90, 77, 110, 0.1);
 }
 
@@ -75,7 +75,7 @@ body.splash-active.splash-revealing > :not(.splash-loader) {
   place-items: center;
   padding: 24px;
   background:
-    radial-gradient(circle at 50% 42%, rgba(30, 92, 74, 0.14), transparent 34%),
+    radial-gradient(circle at 50% 42%, rgba(8, 110, 131, 0.14), transparent 34%),
     var(--splash-bg);
   backdrop-filter: blur(9px);
   opacity: 1;
@@ -109,7 +109,7 @@ body.splash-active.splash-revealing > :not(.splash-loader) {
   border-radius: 50%;
   border: 3px solid var(--splash-accent-soft);
   border-top-color: var(--splash-accent);
-  border-right-color: rgba(139, 77, 31, 0.72);
+  border-right-color: rgba(118, 61, 169, 0.72);
   animation: splash-spin 1.65s ease-in-out infinite;
 }
 .splash-loader__logo {
@@ -130,7 +130,7 @@ body.splash-active.splash-revealing > :not(.splash-loader) {
   height: 3px;
   overflow: hidden;
   border-radius: 999px;
-  background: rgba(30, 92, 74, 0.12);
+  background: rgba(8, 110, 131, 0.12);
 }
 .splash-loader__progress span {
   display: block;

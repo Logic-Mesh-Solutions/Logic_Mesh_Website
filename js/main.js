@@ -41,10 +41,24 @@
 
 // Nav toggle
 function toggleNav() {
-  document.getElementById('navLinks').classList.toggle('open');
+  const navLinks = document.getElementById('navLinks');
+  const isOpen = navLinks.classList.toggle('open');
+  const menuButton = document.getElementById('hamburger');
+
+  if (menuButton) {
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+    menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  }
 }
 document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  a.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+    const menuButton = document.getElementById('hamburger');
+    if (menuButton) {
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation menu');
+    }
+  });
 });
 
 // Active nav link
